@@ -1,0 +1,11 @@
+﻿CREATE TABLE [dbo].[playerInfo]
+(
+	[Id] INT NOT NULL IDENTITY PRIMARY KEY,
+	[FirstName] VARCHAR(255) NOT NULL,
+	[MiddleName] VARCHAR(255) NULL,
+	[LastName] VARCHAR(255) NOT NULL,
+	[DateOfBirth] DATE NOT NULL,
+	[HeightInches] TINYINT NOT NULL,
+	[JerseyNumber] TINYINT NOT NULL
+
+);
