@@ -34,7 +34,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.submitButton = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.jerseyNumTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -42,21 +41,22 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.pastTeamTextBox1 = new System.Windows.Forms.TextBox();
-            this.pastTeamTextBox3 = new System.Windows.Forms.TextBox();
-            this.pastTeamTextBox7 = new System.Windows.Forms.TextBox();
-            this.pastTeamTextBox5 = new System.Windows.Forms.TextBox();
-            this.pastTeamTextBox9 = new System.Windows.Forms.TextBox();
-            this.pastTeamTextBox10 = new System.Windows.Forms.TextBox();
-            this.pastTeamTextBox8 = new System.Windows.Forms.TextBox();
-            this.pastTeamTextBox6 = new System.Windows.Forms.TextBox();
-            this.pastTeamTextBox4 = new System.Windows.Forms.TextBox();
-            this.pastTeamTextBox2 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.currentTeamTextBox = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.middleNameTextBox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.pastTeamTextBox1 = new System.Windows.Forms.TextBox();
+            this.pastTeamTextBox3 = new System.Windows.Forms.TextBox();
+            this.pastTeamTextBox5 = new System.Windows.Forms.TextBox();
+            this.pastTeamTextBox7 = new System.Windows.Forms.TextBox();
+            this.pastTeamTextBox9 = new System.Windows.Forms.TextBox();
+            this.pastTeamTextBox2 = new System.Windows.Forms.TextBox();
+            this.pastTeamTextBox4 = new System.Windows.Forms.TextBox();
+            this.pastTeamTextBox6 = new System.Windows.Forms.TextBox();
+            this.pastTeamTextBox8 = new System.Windows.Forms.TextBox();
+            this.pastTeamTextBox10 = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -115,24 +115,6 @@
             this.submitButton.Text = "Submit";
             this.submitButton.UseVisualStyleBackColor = true;
             this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.AutoScroll = true;
-            this.panel1.Controls.Add(this.pastTeamTextBox10);
-            this.panel1.Controls.Add(this.pastTeamTextBox8);
-            this.panel1.Controls.Add(this.pastTeamTextBox6);
-            this.panel1.Controls.Add(this.pastTeamTextBox4);
-            this.panel1.Controls.Add(this.pastTeamTextBox2);
-            this.panel1.Controls.Add(this.pastTeamTextBox9);
-            this.panel1.Controls.Add(this.pastTeamTextBox7);
-            this.panel1.Controls.Add(this.pastTeamTextBox5);
-            this.panel1.Controls.Add(this.pastTeamTextBox3);
-            this.panel1.Controls.Add(this.pastTeamTextBox1);
-            this.panel1.Location = new System.Drawing.Point(22, 298);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(356, 140);
-            this.panel1.TabIndex = 6;
             // 
             // label4
             // 
@@ -196,78 +178,6 @@
             this.dateTimePicker1.TabIndex = 16;
             this.dateTimePicker1.Value = new System.DateTime(1994, 6, 15, 0, 0, 0, 0);
             // 
-            // pastTeamTextBox1
-            // 
-            this.pastTeamTextBox1.Location = new System.Drawing.Point(0, 6);
-            this.pastTeamTextBox1.Name = "pastTeamTextBox1";
-            this.pastTeamTextBox1.Size = new System.Drawing.Size(156, 22);
-            this.pastTeamTextBox1.TabIndex = 3;
-            // 
-            // pastTeamTextBox3
-            // 
-            this.pastTeamTextBox3.Location = new System.Drawing.Point(0, 34);
-            this.pastTeamTextBox3.Name = "pastTeamTextBox3";
-            this.pastTeamTextBox3.Size = new System.Drawing.Size(156, 22);
-            this.pastTeamTextBox3.TabIndex = 4;
-            // 
-            // pastTeamTextBox7
-            // 
-            this.pastTeamTextBox7.Location = new System.Drawing.Point(0, 90);
-            this.pastTeamTextBox7.Name = "pastTeamTextBox7";
-            this.pastTeamTextBox7.Size = new System.Drawing.Size(156, 22);
-            this.pastTeamTextBox7.TabIndex = 6;
-            this.pastTeamTextBox7.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
-            // 
-            // pastTeamTextBox5
-            // 
-            this.pastTeamTextBox5.Location = new System.Drawing.Point(0, 62);
-            this.pastTeamTextBox5.Name = "pastTeamTextBox5";
-            this.pastTeamTextBox5.Size = new System.Drawing.Size(156, 22);
-            this.pastTeamTextBox5.TabIndex = 5;
-            // 
-            // pastTeamTextBox9
-            // 
-            this.pastTeamTextBox9.Location = new System.Drawing.Point(0, 118);
-            this.pastTeamTextBox9.Name = "pastTeamTextBox9";
-            this.pastTeamTextBox9.Size = new System.Drawing.Size(156, 22);
-            this.pastTeamTextBox9.TabIndex = 7;
-            this.pastTeamTextBox9.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
-            // 
-            // pastTeamTextBox10
-            // 
-            this.pastTeamTextBox10.Location = new System.Drawing.Point(197, 118);
-            this.pastTeamTextBox10.Name = "pastTeamTextBox10";
-            this.pastTeamTextBox10.Size = new System.Drawing.Size(156, 22);
-            this.pastTeamTextBox10.TabIndex = 12;
-            // 
-            // pastTeamTextBox8
-            // 
-            this.pastTeamTextBox8.Location = new System.Drawing.Point(197, 90);
-            this.pastTeamTextBox8.Name = "pastTeamTextBox8";
-            this.pastTeamTextBox8.Size = new System.Drawing.Size(156, 22);
-            this.pastTeamTextBox8.TabIndex = 11;
-            // 
-            // pastTeamTextBox6
-            // 
-            this.pastTeamTextBox6.Location = new System.Drawing.Point(197, 62);
-            this.pastTeamTextBox6.Name = "pastTeamTextBox6";
-            this.pastTeamTextBox6.Size = new System.Drawing.Size(156, 22);
-            this.pastTeamTextBox6.TabIndex = 10;
-            // 
-            // pastTeamTextBox4
-            // 
-            this.pastTeamTextBox4.Location = new System.Drawing.Point(197, 34);
-            this.pastTeamTextBox4.Name = "pastTeamTextBox4";
-            this.pastTeamTextBox4.Size = new System.Drawing.Size(156, 22);
-            this.pastTeamTextBox4.TabIndex = 9;
-            // 
-            // pastTeamTextBox2
-            // 
-            this.pastTeamTextBox2.Location = new System.Drawing.Point(197, 6);
-            this.pastTeamTextBox2.Name = "pastTeamTextBox2";
-            this.pastTeamTextBox2.Size = new System.Drawing.Size(156, 22);
-            this.pastTeamTextBox2.TabIndex = 8;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -277,12 +187,12 @@
             this.label7.TabIndex = 18;
             this.label7.Text = "Current Team:";
             // 
-            // textBox1
+            // currentTeamTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(124, 232);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(251, 22);
-            this.textBox1.TabIndex = 17;
+            this.currentTeamTextBox.Location = new System.Drawing.Point(124, 232);
+            this.currentTeamTextBox.Name = "currentTeamTextBox";
+            this.currentTeamTextBox.Size = new System.Drawing.Size(251, 22);
+            this.currentTeamTextBox.TabIndex = 17;
             // 
             // label9
             // 
@@ -310,6 +220,96 @@
             this.label10.TabIndex = 20;
             this.label10.Text = "Middle Name:";
             // 
+            // pastTeamTextBox1
+            // 
+            this.pastTeamTextBox1.Location = new System.Drawing.Point(0, 6);
+            this.pastTeamTextBox1.Name = "pastTeamTextBox1";
+            this.pastTeamTextBox1.Size = new System.Drawing.Size(156, 22);
+            this.pastTeamTextBox1.TabIndex = 3;
+            // 
+            // pastTeamTextBox3
+            // 
+            this.pastTeamTextBox3.Location = new System.Drawing.Point(0, 34);
+            this.pastTeamTextBox3.Name = "pastTeamTextBox3";
+            this.pastTeamTextBox3.Size = new System.Drawing.Size(156, 22);
+            this.pastTeamTextBox3.TabIndex = 4;
+            // 
+            // pastTeamTextBox5
+            // 
+            this.pastTeamTextBox5.Location = new System.Drawing.Point(0, 62);
+            this.pastTeamTextBox5.Name = "pastTeamTextBox5";
+            this.pastTeamTextBox5.Size = new System.Drawing.Size(156, 22);
+            this.pastTeamTextBox5.TabIndex = 5;
+            // 
+            // pastTeamTextBox7
+            // 
+            this.pastTeamTextBox7.Location = new System.Drawing.Point(0, 90);
+            this.pastTeamTextBox7.Name = "pastTeamTextBox7";
+            this.pastTeamTextBox7.Size = new System.Drawing.Size(156, 22);
+            this.pastTeamTextBox7.TabIndex = 6;
+            this.pastTeamTextBox7.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            // 
+            // pastTeamTextBox9
+            // 
+            this.pastTeamTextBox9.Location = new System.Drawing.Point(0, 118);
+            this.pastTeamTextBox9.Name = "pastTeamTextBox9";
+            this.pastTeamTextBox9.Size = new System.Drawing.Size(156, 22);
+            this.pastTeamTextBox9.TabIndex = 7;
+            this.pastTeamTextBox9.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
+            // 
+            // pastTeamTextBox2
+            // 
+            this.pastTeamTextBox2.Location = new System.Drawing.Point(197, 6);
+            this.pastTeamTextBox2.Name = "pastTeamTextBox2";
+            this.pastTeamTextBox2.Size = new System.Drawing.Size(156, 22);
+            this.pastTeamTextBox2.TabIndex = 8;
+            // 
+            // pastTeamTextBox4
+            // 
+            this.pastTeamTextBox4.Location = new System.Drawing.Point(197, 34);
+            this.pastTeamTextBox4.Name = "pastTeamTextBox4";
+            this.pastTeamTextBox4.Size = new System.Drawing.Size(156, 22);
+            this.pastTeamTextBox4.TabIndex = 9;
+            // 
+            // pastTeamTextBox6
+            // 
+            this.pastTeamTextBox6.Location = new System.Drawing.Point(197, 62);
+            this.pastTeamTextBox6.Name = "pastTeamTextBox6";
+            this.pastTeamTextBox6.Size = new System.Drawing.Size(156, 22);
+            this.pastTeamTextBox6.TabIndex = 10;
+            // 
+            // pastTeamTextBox8
+            // 
+            this.pastTeamTextBox8.Location = new System.Drawing.Point(197, 90);
+            this.pastTeamTextBox8.Name = "pastTeamTextBox8";
+            this.pastTeamTextBox8.Size = new System.Drawing.Size(156, 22);
+            this.pastTeamTextBox8.TabIndex = 11;
+            // 
+            // pastTeamTextBox10
+            // 
+            this.pastTeamTextBox10.Location = new System.Drawing.Point(197, 118);
+            this.pastTeamTextBox10.Name = "pastTeamTextBox10";
+            this.pastTeamTextBox10.Size = new System.Drawing.Size(156, 22);
+            this.pastTeamTextBox10.TabIndex = 12;
+            // 
+            // panel1
+            // 
+            this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.pastTeamTextBox10);
+            this.panel1.Controls.Add(this.pastTeamTextBox8);
+            this.panel1.Controls.Add(this.pastTeamTextBox6);
+            this.panel1.Controls.Add(this.pastTeamTextBox4);
+            this.panel1.Controls.Add(this.pastTeamTextBox2);
+            this.panel1.Controls.Add(this.pastTeamTextBox9);
+            this.panel1.Controls.Add(this.pastTeamTextBox7);
+            this.panel1.Controls.Add(this.pastTeamTextBox5);
+            this.panel1.Controls.Add(this.pastTeamTextBox3);
+            this.panel1.Controls.Add(this.pastTeamTextBox1);
+            this.panel1.Location = new System.Drawing.Point(22, 298);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(356, 140);
+            this.panel1.TabIndex = 6;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -319,7 +319,7 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.currentTeamTextBox);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.heightTextBox);
@@ -351,7 +351,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button submitButton;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox jerseyNumTextBox;
         private System.Windows.Forms.Label label5;
@@ -359,21 +358,22 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox pastTeamTextBox10;
-        private System.Windows.Forms.TextBox pastTeamTextBox8;
-        private System.Windows.Forms.TextBox pastTeamTextBox6;
-        private System.Windows.Forms.TextBox pastTeamTextBox4;
-        private System.Windows.Forms.TextBox pastTeamTextBox2;
-        private System.Windows.Forms.TextBox pastTeamTextBox9;
-        private System.Windows.Forms.TextBox pastTeamTextBox7;
-        private System.Windows.Forms.TextBox pastTeamTextBox5;
-        private System.Windows.Forms.TextBox pastTeamTextBox3;
-        private System.Windows.Forms.TextBox pastTeamTextBox1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox currentTeamTextBox;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox middleNameTextBox;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox pastTeamTextBox1;
+        private System.Windows.Forms.TextBox pastTeamTextBox3;
+        private System.Windows.Forms.TextBox pastTeamTextBox5;
+        private System.Windows.Forms.TextBox pastTeamTextBox7;
+        private System.Windows.Forms.TextBox pastTeamTextBox9;
+        private System.Windows.Forms.TextBox pastTeamTextBox2;
+        private System.Windows.Forms.TextBox pastTeamTextBox4;
+        private System.Windows.Forms.TextBox pastTeamTextBox6;
+        private System.Windows.Forms.TextBox pastTeamTextBox8;
+        private System.Windows.Forms.TextBox pastTeamTextBox10;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 
