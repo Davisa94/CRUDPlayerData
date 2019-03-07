@@ -75,14 +75,14 @@
             this.firstNameTextBox.Location = new System.Drawing.Point(124, 64);
             this.firstNameTextBox.Name = "firstNameTextBox";
             this.firstNameTextBox.Size = new System.Drawing.Size(251, 22);
-            this.firstNameTextBox.TabIndex = 2;
+            this.firstNameTextBox.TabIndex = 1;
             // 
             // lastNameTextBox
             // 
             this.lastNameTextBox.Location = new System.Drawing.Point(124, 120);
             this.lastNameTextBox.Name = "lastNameTextBox";
             this.lastNameTextBox.Size = new System.Drawing.Size(251, 22);
-            this.lastNameTextBox.TabIndex = 5;
+            this.lastNameTextBox.TabIndex = 3;
             this.lastNameTextBox.TextChanged += new System.EventHandler(this.lastNameTextBox_TextChanged);
             // 
             // label3
@@ -111,7 +111,7 @@
             this.submitButton.Location = new System.Drawing.Point(303, 444);
             this.submitButton.Name = "submitButton";
             this.submitButton.Size = new System.Drawing.Size(75, 23);
-            this.submitButton.TabIndex = 3;
+            this.submitButton.TabIndex = 18;
             this.submitButton.Text = "Submit";
             this.submitButton.UseVisualStyleBackColor = true;
             this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
@@ -132,7 +132,7 @@
             this.jerseyNumTextBox.Location = new System.Drawing.Point(124, 148);
             this.jerseyNumTextBox.Name = "jerseyNumTextBox";
             this.jerseyNumTextBox.Size = new System.Drawing.Size(251, 22);
-            this.jerseyNumTextBox.TabIndex = 9;
+            this.jerseyNumTextBox.TabIndex = 4;
             // 
             // label5
             // 
@@ -149,7 +149,7 @@
             this.heightTextBox.Location = new System.Drawing.Point(124, 176);
             this.heightTextBox.Name = "heightTextBox";
             this.heightTextBox.Size = new System.Drawing.Size(251, 22);
-            this.heightTextBox.TabIndex = 11;
+            this.heightTextBox.TabIndex = 5;
             // 
             // label6
             // 
@@ -175,7 +175,7 @@
             this.dateTimePicker1.Location = new System.Drawing.Point(124, 204);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(251, 22);
-            this.dateTimePicker1.TabIndex = 16;
+            this.dateTimePicker1.TabIndex = 6;
             this.dateTimePicker1.Value = new System.DateTime(1994, 6, 15, 0, 0, 0, 0);
             // 
             // label7
@@ -192,7 +192,7 @@
             this.currentTeamTextBox.Location = new System.Drawing.Point(124, 232);
             this.currentTeamTextBox.Name = "currentTeamTextBox";
             this.currentTeamTextBox.Size = new System.Drawing.Size(251, 22);
-            this.currentTeamTextBox.TabIndex = 17;
+            this.currentTeamTextBox.TabIndex = 7;
             // 
             // label9
             // 
@@ -209,7 +209,7 @@
             this.middleNameTextBox.Location = new System.Drawing.Point(124, 92);
             this.middleNameTextBox.Name = "middleNameTextBox";
             this.middleNameTextBox.Size = new System.Drawing.Size(251, 22);
-            this.middleNameTextBox.TabIndex = 21;
+            this.middleNameTextBox.TabIndex = 2;
             // 
             // label10
             // 
@@ -225,28 +225,28 @@
             this.pastTeamTextBox1.Location = new System.Drawing.Point(0, 6);
             this.pastTeamTextBox1.Name = "pastTeamTextBox1";
             this.pastTeamTextBox1.Size = new System.Drawing.Size(156, 22);
-            this.pastTeamTextBox1.TabIndex = 3;
+            this.pastTeamTextBox1.TabIndex = 8;
             // 
             // pastTeamTextBox3
             // 
             this.pastTeamTextBox3.Location = new System.Drawing.Point(0, 34);
             this.pastTeamTextBox3.Name = "pastTeamTextBox3";
             this.pastTeamTextBox3.Size = new System.Drawing.Size(156, 22);
-            this.pastTeamTextBox3.TabIndex = 4;
+            this.pastTeamTextBox3.TabIndex = 10;
             // 
             // pastTeamTextBox5
             // 
             this.pastTeamTextBox5.Location = new System.Drawing.Point(0, 62);
             this.pastTeamTextBox5.Name = "pastTeamTextBox5";
             this.pastTeamTextBox5.Size = new System.Drawing.Size(156, 22);
-            this.pastTeamTextBox5.TabIndex = 5;
+            this.pastTeamTextBox5.TabIndex = 12;
             // 
             // pastTeamTextBox7
             // 
             this.pastTeamTextBox7.Location = new System.Drawing.Point(0, 90);
             this.pastTeamTextBox7.Name = "pastTeamTextBox7";
             this.pastTeamTextBox7.Size = new System.Drawing.Size(156, 22);
-            this.pastTeamTextBox7.TabIndex = 6;
+            this.pastTeamTextBox7.TabIndex = 14;
             this.pastTeamTextBox7.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // pastTeamTextBox9
@@ -254,7 +254,7 @@
             this.pastTeamTextBox9.Location = new System.Drawing.Point(0, 118);
             this.pastTeamTextBox9.Name = "pastTeamTextBox9";
             this.pastTeamTextBox9.Size = new System.Drawing.Size(156, 22);
-            this.pastTeamTextBox9.TabIndex = 7;
+            this.pastTeamTextBox9.TabIndex = 16;
             this.pastTeamTextBox9.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // pastTeamTextBox2
@@ -262,35 +262,37 @@
             this.pastTeamTextBox2.Location = new System.Drawing.Point(197, 6);
             this.pastTeamTextBox2.Name = "pastTeamTextBox2";
             this.pastTeamTextBox2.Size = new System.Drawing.Size(156, 22);
-            this.pastTeamTextBox2.TabIndex = 8;
+            this.pastTeamTextBox2.TabIndex = 9;
             // 
             // pastTeamTextBox4
             // 
             this.pastTeamTextBox4.Location = new System.Drawing.Point(197, 34);
             this.pastTeamTextBox4.Name = "pastTeamTextBox4";
             this.pastTeamTextBox4.Size = new System.Drawing.Size(156, 22);
-            this.pastTeamTextBox4.TabIndex = 9;
+            this.pastTeamTextBox4.TabIndex = 11;
+            this.pastTeamTextBox4.TextChanged += new System.EventHandler(this.pastTeamTextBox4_TextChanged);
             // 
             // pastTeamTextBox6
             // 
             this.pastTeamTextBox6.Location = new System.Drawing.Point(197, 62);
             this.pastTeamTextBox6.Name = "pastTeamTextBox6";
             this.pastTeamTextBox6.Size = new System.Drawing.Size(156, 22);
-            this.pastTeamTextBox6.TabIndex = 10;
+            this.pastTeamTextBox6.TabIndex = 13;
             // 
             // pastTeamTextBox8
             // 
             this.pastTeamTextBox8.Location = new System.Drawing.Point(197, 90);
             this.pastTeamTextBox8.Name = "pastTeamTextBox8";
             this.pastTeamTextBox8.Size = new System.Drawing.Size(156, 22);
-            this.pastTeamTextBox8.TabIndex = 11;
+            this.pastTeamTextBox8.TabIndex = 15;
             // 
             // pastTeamTextBox10
             // 
             this.pastTeamTextBox10.Location = new System.Drawing.Point(197, 118);
             this.pastTeamTextBox10.Name = "pastTeamTextBox10";
             this.pastTeamTextBox10.Size = new System.Drawing.Size(156, 22);
-            this.pastTeamTextBox10.TabIndex = 12;
+            this.pastTeamTextBox10.TabIndex = 17;
+            this.pastTeamTextBox10.TextChanged += new System.EventHandler(this.pastTeamTextBox10_TextChanged);
             // 
             // panel1
             // 

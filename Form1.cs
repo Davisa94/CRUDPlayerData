@@ -38,8 +38,8 @@ namespace WindowsFormsApp1
             player.FirstName = firstNameTextBox.Text;
             player.MiddleName = middleNameTextBox.Text;
             player.LastName = lastNameTextBox.Text;
-            player.JerseyNum = Convert.ToInt32(jerseyNumTextBox);
-            player.HeightInches = Convert.ToDecimal(heightTextBox);
+            player.JerseyNum = Convert.ToInt32(jerseyNumTextBox.Text);
+            player.HeightInches = Convert.ToDecimal(heightTextBox.Text);
             player.CurrentTeam = currentTeamTextBox.Text;
 
             //loop through each of the past team boxes
@@ -49,9 +49,11 @@ namespace WindowsFormsApp1
                 {
                     TextBox textBox = (TextBox)c;
 
-                    if (textBox.Text != "")
+                    if (textBox.Text != "" && !(string.IsNullOrWhiteSpace(textBox.Text)))
                     {
-                        player.PastTeams.Add(textBox.Text.ToUpper());
+                        string teamName = textBox.Text;
+                        teamName = teamName.ToUpper();
+                        player.PastTeams.Add(teamName);
                     }
                 }
             }
@@ -102,6 +104,16 @@ namespace WindowsFormsApp1
         }
 
         private void lastNameTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pastTeamTextBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pastTeamTextBox10_TextChanged(object sender, EventArgs e)
         {
 
         }

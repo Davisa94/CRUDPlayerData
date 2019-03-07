@@ -22,9 +22,15 @@ namespace WindowsFormsApp1
             if(middleName == "") { middleName = "NULL"; }
             //Create the insertion query
             //TODO: is there a way to prepare this statment
-            string query = @"INSERT INTO dbo.playerInfo (FirstName, MiddleName, LastName, DateOfBirth, HeightInches, JerseyNumber ) VALUES ("+player.FirstName+", "+player.MiddleName+", "+player.LastName+", "+player.DateOfBirth+", "+player.HeightInches+", "+player.JerseyNum+")";
-            //Create the command using the query and the connection
-            SqlCommand command = new SqlCommand(query, connection);
+            string query = "INSERT INTO PlayerTeamData.dbo.playerInfo (FirstName, MiddleName, LastName, DateOfBirth, HeightInches, JerseyNumber) " +
+                " VALUES (@firstName,@middleName+, @lastName, @DOB, @height, @jerseyNum)";
+            //Prepare the query
+            using (SqlCommand querySavePlayer = new SqlCommand(query))
+            {
+                querySavePlayer.Connection = connection;
+            }
+                //Create the command using the query and the connection
+                SqlCommand command = new SqlCommand(query, connection);
             //execute the command
             command.ExecuteNonQuery();
 
