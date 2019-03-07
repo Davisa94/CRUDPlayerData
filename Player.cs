@@ -13,6 +13,7 @@ namespace WindowsFormsApp1
         public int JerseyNum { get; set; }
         public decimal HeightInches { get; set; }
         public string FirstName { get; set; }
+        public string MiddleName { get; set; }
         public string LastName { get; set; }
         // a list of the past teams by name
         public string[] PastTeams { get; set; }

@@ -36,6 +36,7 @@ namespace WindowsFormsApp1
         {
             Player player = new Player();
             player.FirstName = firstNameTextBox.Text;
+            player.MiddleName = middleNameTextBox.Text;
             player.LastName = lastNameTextBox.Text;
 
         }
