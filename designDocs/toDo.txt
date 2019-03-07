@@ -1,5 +1,6 @@
 DB:
     *Create HistoricalPlayerToTeams Table
+    *Create PlayerToTeam Table
 Classes:
     *Create DBConnection Class:
         *SavePlayer() == DONE
