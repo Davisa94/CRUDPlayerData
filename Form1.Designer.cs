@@ -38,7 +38,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.jerseyNumTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.heightTextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -162,12 +162,12 @@
             this.label5.Text = "Jersey #:";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
-            // textBox2
+            // heightTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(124, 176);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(251, 22);
-            this.textBox2.TabIndex = 11;
+            this.heightTextBox.Location = new System.Drawing.Point(124, 176);
+            this.heightTextBox.Name = "heightTextBox";
+            this.heightTextBox.Size = new System.Drawing.Size(251, 22);
+            this.heightTextBox.TabIndex = 11;
             // 
             // label6
             // 
@@ -322,7 +322,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.heightTextBox);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.jerseyNumTextBox);
             this.Controls.Add(this.label5);
@@ -355,7 +355,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox jerseyNumTextBox;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox heightTextBox;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;

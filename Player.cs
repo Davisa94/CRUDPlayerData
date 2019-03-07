@@ -16,7 +16,7 @@ namespace WindowsFormsApp1
         public string MiddleName { get; set; }
         public string LastName { get; set; }
         // a list of the past teams by name
-        public string[] PastTeams { get; set; }
+        public List<string> PastTeams { get; set; }
         public string CurrentTeam { get; set; }
 
     }

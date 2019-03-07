@@ -38,7 +38,27 @@ namespace WindowsFormsApp1
             player.FirstName = firstNameTextBox.Text;
             player.MiddleName = middleNameTextBox.Text;
             player.LastName = lastNameTextBox.Text;
+            player.JerseyNum = Convert.ToInt32(jerseyNumTextBox);
+            player.HeightInches = Convert.ToDecimal(heightTextBox);
 
+
+            foreach (Control c in panel1.Controls)
+            {
+                if (c is TextBox)
+
+                {
+
+                    TextBox textBox = (TextBox)c;
+
+                    if (textBox.Text != "")
+                    {
+
+                    }
+
+
+                }
+
+            }
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
