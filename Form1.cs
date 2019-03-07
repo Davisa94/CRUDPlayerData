@@ -40,6 +40,7 @@ namespace WindowsFormsApp1
             player.LastName = lastNameTextBox.Text;
             player.JerseyNum = Convert.ToInt32(jerseyNumTextBox.Text);
             player.HeightInches = Convert.ToDecimal(heightTextBox.Text);
+            player.DateOfBirth = Convert.ToDateTime(dateTimePicker1.Text);
             player.CurrentTeam = currentTeamTextBox.Text;
 
             //loop through each of the past team boxes
