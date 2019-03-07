@@ -1,6 +1,7 @@
 DB:
     *Create HistoricalPlayerToTeams Table
     *Create PlayerToTeam Table
+    ~Create Enumeration Team Table and convert team entry to dropdown
 Classes:
     *Create DBConnection Class:
         *SavePlayer() == DONE

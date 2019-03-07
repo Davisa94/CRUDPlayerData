@@ -1,31 +1,30 @@
-1,TeamName,Location
-2,Boston Celtics,boston-celtics
-3,Brooklyn Nets,brooklyn-nets
-4,New York Knicks,new-york-knicks
-5,Philadelphia 76ers,philadelphia-76ers
-6,Toronto Raptors,toronto-raptors
-7,Golden State Warriors,golden-state-warriors
-8,Los Angeles Clippers,los-angeles-clippers
-9,Los Angeles Lakers,los-angeles-lakers
-10,Phoenix Suns,phoenix-suns
-11,Sacramento Kings,sacramento-kings
-12,Chicago Bulls,chicago-bulls
-13,Cleveland Cavaliers,cleveland-cavaliers
-14,Detroit Pistons,detroit-pistons
-15,Indiana Pacers,indiana-pacers
-16,Milwaukee Bucks,milwaukee-bucks
-17,Dallas Mavericks,dallas-mavericks
-18,Houston Rockets,houston-rockets
-19,Memphis Grizzlies,memphis-grizzlies
-20,New Orleans Hornets,new-orleans-hornets
-21,San Antonio Spurs,san-antonio-spurs
-22,Atlanta Hawks,atlanta-hawks
-23,Charlotte Bobcats,charlotte-bobcats
-24,Miami Heat,miami-heat
-25,Orlando Magic,orlando-magic
-26,Washington Wizards,washington-wizards
-27,Denver Nuggets,denver-nuggets
-28,Minnesota Timberwolves,minnesota-timberwolves
-29,Oklahoma City Thunder,oklahoma-city-thunder
-30,Portland Trail Blazers,portland-trail-blazers
-31,Utah Jazz,utah-jazz
+1,boston-celtics,Boston Celtics
+2,brooklyn-nets,Brooklyn Nets
+3,new-york-knicks,New York Knicks
+4,philadelphia-76ers,Philadelphia 76ers
+5,toronto-raptors,Toronto Raptors
+6,golden-state-warriors,Golden State Warriors
+7,los-angeles-clippers,Los Angeles Clippers
+8,los-angeles-lakers,Los Angeles Lakers
+9,phoenix-suns,Phoenix Suns
+10,sacramento-kings,Sacramento Kings
+11,chicago-bulls,Chicago Bulls
+12,cleveland-cavaliers,Cleveland Cavaliers
+13,detroit-pistons,Detroit Pistons
+14,indiana-pacers,Indiana Pacers
+15,milwaukee-bucks,Milwaukee Bucks
+16,dallas-mavericks,Dallas Mavericks
+17,houston-rockets,Houston Rockets
+18,memphis-grizzlies,Memphis Grizzlies
+19,new-orleans-hornets,New Orleans Hornets
+20,san-antonio-spurs,San Antonio Spurs
+21,atlanta-hawks,Atlanta Hawks
+22,charlotte-bobcats,Charlotte Bobcats
+23,miami-heat,Miami Heat
+24,orlando-magic,Orlando Magic
+25,washington-wizards,Washington Wizards
+26,denver-nuggets,Denver Nuggets
+27,minnesota-timberwolves,Minnesota Timberwolves
+28,oklahoma-city-thunder,Oklahoma City Thunder
+29,portland-trail-blazers,Portland Trail Blazers
+30,utah-jazz,Utah Jazz

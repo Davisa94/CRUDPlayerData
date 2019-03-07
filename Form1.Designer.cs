@@ -1,4 +1,6 @@
-﻿namespace WindowsFormsApp1
+﻿using System.Collections.Generic;
+
+namespace WindowsFormsApp1
 {
     partial class Form1
     {
@@ -42,22 +44,11 @@
             this.label8 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
-            this.currentTeamTextBox = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.middleNameTextBox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.pastTeamTextBox1 = new System.Windows.Forms.TextBox();
-            this.pastTeamTextBox3 = new System.Windows.Forms.TextBox();
-            this.pastTeamTextBox5 = new System.Windows.Forms.TextBox();
-            this.pastTeamTextBox7 = new System.Windows.Forms.TextBox();
-            this.pastTeamTextBox9 = new System.Windows.Forms.TextBox();
-            this.pastTeamTextBox2 = new System.Windows.Forms.TextBox();
-            this.pastTeamTextBox4 = new System.Windows.Forms.TextBox();
-            this.pastTeamTextBox6 = new System.Windows.Forms.TextBox();
-            this.pastTeamTextBox8 = new System.Windows.Forms.TextBox();
-            this.pastTeamTextBox10 = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
+            this.currentTeamComboBox = new System.Windows.Forms.ComboBox();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.SuspendLayout();
             // 
             // label2
@@ -189,13 +180,6 @@
             this.label7.TabIndex = 18;
             this.label7.Text = "Current Team:";
             // 
-            // currentTeamTextBox
-            // 
-            this.currentTeamTextBox.Location = new System.Drawing.Point(124, 204);
-            this.currentTeamTextBox.Name = "currentTeamTextBox";
-            this.currentTeamTextBox.Size = new System.Drawing.Size(251, 22);
-            this.currentTeamTextBox.TabIndex = 6;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -222,108 +206,33 @@
             this.label10.TabIndex = 20;
             this.label10.Text = "Middle Name:";
             // 
-            // pastTeamTextBox1
+            // currentTeamComboBox
             // 
-            this.pastTeamTextBox1.Location = new System.Drawing.Point(0, 6);
-            this.pastTeamTextBox1.Name = "pastTeamTextBox1";
-            this.pastTeamTextBox1.Size = new System.Drawing.Size(156, 22);
-            this.pastTeamTextBox1.TabIndex = 8;
+            this.currentTeamComboBox.FormattingEnabled = true;
+            this.currentTeamComboBox.Location = new System.Drawing.Point(124, 204);
+            this.currentTeamComboBox.Name = "currentTeamComboBox";
+            this.currentTeamComboBox.Size = new System.Drawing.Size(251, 24);
+            this.currentTeamComboBox.TabIndex = 22;
             // 
-            // pastTeamTextBox3
+            // checkedListBox1
             // 
-            this.pastTeamTextBox3.Location = new System.Drawing.Point(0, 34);
-            this.pastTeamTextBox3.Name = "pastTeamTextBox3";
-            this.pastTeamTextBox3.Size = new System.Drawing.Size(156, 22);
-            this.pastTeamTextBox3.TabIndex = 10;
-            // 
-            // pastTeamTextBox5
-            // 
-            this.pastTeamTextBox5.Location = new System.Drawing.Point(0, 62);
-            this.pastTeamTextBox5.Name = "pastTeamTextBox5";
-            this.pastTeamTextBox5.Size = new System.Drawing.Size(156, 22);
-            this.pastTeamTextBox5.TabIndex = 12;
-            // 
-            // pastTeamTextBox7
-            // 
-            this.pastTeamTextBox7.Location = new System.Drawing.Point(0, 90);
-            this.pastTeamTextBox7.Name = "pastTeamTextBox7";
-            this.pastTeamTextBox7.Size = new System.Drawing.Size(156, 22);
-            this.pastTeamTextBox7.TabIndex = 14;
-            this.pastTeamTextBox7.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
-            // 
-            // pastTeamTextBox9
-            // 
-            this.pastTeamTextBox9.Location = new System.Drawing.Point(0, 118);
-            this.pastTeamTextBox9.Name = "pastTeamTextBox9";
-            this.pastTeamTextBox9.Size = new System.Drawing.Size(156, 22);
-            this.pastTeamTextBox9.TabIndex = 16;
-            this.pastTeamTextBox9.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
-            // 
-            // pastTeamTextBox2
-            // 
-            this.pastTeamTextBox2.Location = new System.Drawing.Point(197, 6);
-            this.pastTeamTextBox2.Name = "pastTeamTextBox2";
-            this.pastTeamTextBox2.Size = new System.Drawing.Size(156, 22);
-            this.pastTeamTextBox2.TabIndex = 9;
-            // 
-            // pastTeamTextBox4
-            // 
-            this.pastTeamTextBox4.Location = new System.Drawing.Point(197, 34);
-            this.pastTeamTextBox4.Name = "pastTeamTextBox4";
-            this.pastTeamTextBox4.Size = new System.Drawing.Size(156, 22);
-            this.pastTeamTextBox4.TabIndex = 11;
-            this.pastTeamTextBox4.TextChanged += new System.EventHandler(this.pastTeamTextBox4_TextChanged);
-            // 
-            // pastTeamTextBox6
-            // 
-            this.pastTeamTextBox6.Location = new System.Drawing.Point(197, 62);
-            this.pastTeamTextBox6.Name = "pastTeamTextBox6";
-            this.pastTeamTextBox6.Size = new System.Drawing.Size(156, 22);
-            this.pastTeamTextBox6.TabIndex = 13;
-            // 
-            // pastTeamTextBox8
-            // 
-            this.pastTeamTextBox8.Location = new System.Drawing.Point(197, 90);
-            this.pastTeamTextBox8.Name = "pastTeamTextBox8";
-            this.pastTeamTextBox8.Size = new System.Drawing.Size(156, 22);
-            this.pastTeamTextBox8.TabIndex = 15;
-            // 
-            // pastTeamTextBox10
-            // 
-            this.pastTeamTextBox10.Location = new System.Drawing.Point(197, 118);
-            this.pastTeamTextBox10.Name = "pastTeamTextBox10";
-            this.pastTeamTextBox10.Size = new System.Drawing.Size(156, 22);
-            this.pastTeamTextBox10.TabIndex = 17;
-            this.pastTeamTextBox10.TextChanged += new System.EventHandler(this.pastTeamTextBox10_TextChanged);
-            // 
-            // panel1
-            // 
-            this.panel1.AutoScroll = true;
-            this.panel1.Controls.Add(this.pastTeamTextBox10);
-            this.panel1.Controls.Add(this.pastTeamTextBox8);
-            this.panel1.Controls.Add(this.pastTeamTextBox6);
-            this.panel1.Controls.Add(this.pastTeamTextBox4);
-            this.panel1.Controls.Add(this.pastTeamTextBox2);
-            this.panel1.Controls.Add(this.pastTeamTextBox9);
-            this.panel1.Controls.Add(this.pastTeamTextBox7);
-            this.panel1.Controls.Add(this.pastTeamTextBox5);
-            this.panel1.Controls.Add(this.pastTeamTextBox3);
-            this.panel1.Controls.Add(this.pastTeamTextBox1);
-            this.panel1.Location = new System.Drawing.Point(22, 298);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(356, 140);
-            this.panel1.TabIndex = 19;
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Location = new System.Drawing.Point(22, 298);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(353, 123);
+            this.checkedListBox1.TabIndex = 23;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1448, 767);
+            this.Controls.Add(this.checkedListBox1);
+            this.Controls.Add(this.currentTeamComboBox);
             this.Controls.Add(this.middleNameTextBox);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.currentTeamTextBox);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.heightTextBox);
@@ -331,7 +240,6 @@
             this.Controls.Add(this.jerseyNumTextBox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.submitButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lastNameTextBox);
@@ -341,8 +249,6 @@
             this.Name = "Form1";
             this.Text = "PlayerData";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -363,21 +269,11 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox currentTeamTextBox;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox middleNameTextBox;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox pastTeamTextBox1;
-        private System.Windows.Forms.TextBox pastTeamTextBox3;
-        private System.Windows.Forms.TextBox pastTeamTextBox5;
-        private System.Windows.Forms.TextBox pastTeamTextBox7;
-        private System.Windows.Forms.TextBox pastTeamTextBox9;
-        private System.Windows.Forms.TextBox pastTeamTextBox2;
-        private System.Windows.Forms.TextBox pastTeamTextBox4;
-        private System.Windows.Forms.TextBox pastTeamTextBox6;
-        private System.Windows.Forms.TextBox pastTeamTextBox8;
-        private System.Windows.Forms.TextBox pastTeamTextBox10;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ComboBox currentTeamComboBox;
+        private System.Windows.Forms.CheckedListBox checkedListBox1;
     }
 }
 

@@ -9,6 +9,7 @@ namespace WindowsFormsApp1
 {
     class DBConnection
     {
+        private string connectString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=master;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
         public int SavePlayer(Player player)
         {
             int numRecords = -1;
@@ -16,8 +17,7 @@ namespace WindowsFormsApp1
             string middleName = player.MiddleName;
             if (middleName == "") { middleName = "NULL"; }
             //Create connection string for local DB
-            string connectString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=master;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-            using (SqlConnection connection = new SqlConnection(connectString))
+            using (SqlConnection connection = new SqlConnection(this.connectString))
             {
                 //Create the insertion query
                 //TODO: is there a way to prepare this statment
@@ -49,10 +49,27 @@ namespace WindowsFormsApp1
             }  
             return numRecords;
         }
-        public int addPlayerToTeam(Player player, int player_id)
+        public List<string> AddPlayerToTeam(Player player, int player_id)
         {
-
-            return 0;
+            //create list to store team names:
+            List<string> TeamNames = new List<string>();
+            //TODO: FIX CODE HERE
+            return TeamNames;
+        }
+        public List<string> GetTeams()
+        {
+            //create list to store team names:
+            List<string> TeamNames = new List<string>();
+            SqlConnection connection = new SqlConnection(this.connectString);
+            connection.Open();
+            string query = "Select TeamName FROM PlayerTeamData.dbo.Teams";
+            SqlCommand commmand = new SqlCommand(query, connection);
+            SqlDataReader reader = commmand.ExecuteReader();
+            while (reader.Read())
+            {
+                TeamNames.Add(reader["TeamName"].ToString());
+            }
+            return TeamNames;
         }
     }
 }

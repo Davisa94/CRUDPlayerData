@@ -41,23 +41,9 @@ namespace WindowsFormsApp1
             player.JerseyNum = Convert.ToInt32(jerseyNumTextBox.Text);
             player.HeightInches = Convert.ToDecimal(heightTextBox.Text);
             player.DateOfBirth = Convert.ToDateTime(dateTimePicker1.Text);
-            player.CurrentTeam = currentTeamTextBox.Text;
+            player.CurrentTeam = currentTeamComboBox.Text;
 
-            //loop through each of the past team boxes
-            foreach (Control c in panel1.Controls)
-            {
-                if (c is TextBox)
-                {
-                    TextBox textBox = (TextBox)c;
-
-                    if (textBox.Text != "" && !(string.IsNullOrWhiteSpace(textBox.Text)))
-                    {
-                        string teamName = textBox.Text;
-                        teamName = teamName.ToUpper();
-                        player.PastTeams.Add(teamName);
-                    }
-                }
-            }
+            //TODO: capture past teams form new input type
             //create a DBConnection and insert the player Data
             DBConnection dbo = new DBConnection();
             dbo.SavePlayer(player);
@@ -71,7 +57,17 @@ namespace WindowsFormsApp1
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //create DB object
+            DBConnection dbo = new DBConnection();
+            //create the list
+            List<string> CurrentTeamNames = new List<string>();
+            List<string> PastTeamNames = new List<string>();
 
+            CurrentTeamNames = dbo.GetTeams();
+            PastTeamNames = CurrentTeamNames;
+
+            this.currentTeamComboBox.DataSource = CurrentTeamNames;
+            this.checkedListBox1.DataSource = PastTeamNames;
         }
 
         private void label4_Click(object sender, EventArgs e)
