@@ -18,6 +18,5 @@ namespace WindowsFormsApp1
         public string[] PastTeams { get; set; }
         public string CurrentTeam { get; set; }
 
-
     }
 }

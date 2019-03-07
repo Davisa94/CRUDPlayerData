@@ -36,6 +36,8 @@ namespace WindowsFormsApp1
         {
             Player player = new Player();
             player.FirstName = firstNameTextBox.Text;
+            player.LastName = lastNameTextBox.Text;
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -74,6 +76,11 @@ namespace WindowsFormsApp1
         }
 
         private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lastNameTextBox_TextChanged(object sender, EventArgs e)
         {
 
         }
