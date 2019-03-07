@@ -22,7 +22,7 @@ namespace WindowsFormsApp1
                 //Create the insertion query
                 //TODO: is there a way to prepare this statment
                 string query = "INSERT INTO PlayerTeamData.dbo.playerInfo (FirstName, MiddleName, LastName, DateOfBirth, HeightInches, JerseyNumber) " +
-                    " VALUES (@firstName,@middleName+, @lastName, @DOB, @height, @jerseyNum)";
+                    " VALUES (@firstName,@middleName, @lastName, @DOB, @height, @jerseyNum)";
                 //Prepare the query
                 using (SqlCommand command = new SqlCommand(query))
                 {
@@ -46,11 +46,12 @@ namespace WindowsFormsApp1
 
 
                 }
-            }
-                
-
-            
+            }  
             return numRecords;
+        }
+        public int addPlayerToTeam(Player player, int player_id)
+        {
+            return 0;
         }
     }
 }

@@ -1,8 +1,10 @@
 DB:
-    *Create Historical_PlayerToTeams Table
+    *Create HistoricalPlayerToTeams Table
 Classes:
     *Create DBConnection Class:
         *SavePlayer() == DONE
+            *AddPlayerToTeam()
+            *AddPlayerToHistoricalTeams()
         *loadPlayer()
         *updatePlayer()
         *deleterPlayer()
@@ -11,3 +13,4 @@ Classes:
 Form:
     *Create and link grid to DB
     *Validation
+    *Double Check Tabbing

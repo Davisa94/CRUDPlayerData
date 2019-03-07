@@ -164,24 +164,26 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(19, 204);
+            this.label8.Location = new System.Drawing.Point(19, 232);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(91, 17);
             this.label8.TabIndex = 14;
             this.label8.Text = "Date of Birth:";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(124, 204);
+            this.dateTimePicker1.Location = new System.Drawing.Point(124, 232);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(251, 22);
-            this.dateTimePicker1.TabIndex = 6;
+            this.dateTimePicker1.TabIndex = 7;
             this.dateTimePicker1.Value = new System.DateTime(1994, 6, 15, 0, 0, 0, 0);
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(19, 232);
+            this.label7.Location = new System.Drawing.Point(19, 204);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(99, 17);
             this.label7.TabIndex = 18;
@@ -189,10 +191,10 @@
             // 
             // currentTeamTextBox
             // 
-            this.currentTeamTextBox.Location = new System.Drawing.Point(124, 232);
+            this.currentTeamTextBox.Location = new System.Drawing.Point(124, 204);
             this.currentTeamTextBox.Name = "currentTeamTextBox";
             this.currentTeamTextBox.Size = new System.Drawing.Size(251, 22);
-            this.currentTeamTextBox.TabIndex = 7;
+            this.currentTeamTextBox.TabIndex = 6;
             // 
             // label9
             // 
@@ -310,7 +312,7 @@
             this.panel1.Location = new System.Drawing.Point(22, 298);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(356, 140);
-            this.panel1.TabIndex = 6;
+            this.panel1.TabIndex = 19;
             // 
             // Form1
             // 
