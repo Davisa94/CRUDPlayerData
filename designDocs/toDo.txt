@@ -1,3 +1,12 @@
 DB:
     *Create Historical_PlayerToTeams Table
-    
+Classes:
+    *Create DBConnection Class:
+        *SavePlayer()
+        *loadPlayer()
+        *updatePlayer()
+        *deleterPlayer()
+        *loadPlayers()
+        *loadTeams()
+Form:
+    *Create and link grid to DB
