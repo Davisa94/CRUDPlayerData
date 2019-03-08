@@ -9,6 +9,7 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
+
     class DBConnection
     {
         private string connectString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=master;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
