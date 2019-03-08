@@ -57,9 +57,20 @@ namespace WindowsFormsApp1
             //TODO CLEAR EACH CONTROL
             firstNameTextBox.Text = "";
             middleNameTextBox.Text = "";
-            lastNameTextBox = "";
-            jerseyNumTextBox = "";
-            heightTextBox = "";
+            lastNameTextBox.Text = "";
+            jerseyNumTextBox.Text = "";
+            heightTextBox.Text = "";
+            dateTimePicker1.Value = Convert.ToDateTime("6/15/1994");
+            currentTeamComboBox.SelectedIndex = -1;
+            foreach (int index in checkedListBox1.CheckedIndices)
+            {
+                checkedListBox1.SetItemCheckState(index, CheckState.Unchecked);
+            }
+            
+            //this should redraw after submit:
+            dataGridView1.AutoGenerateColumns = true;
+            dataGridView1.Invalidate();
+            dataGridView1.Refresh();
             //TODO UPDATE THE GRID VIEW WITH NEW ENTRY
 
         }
