@@ -1,18 +1,21 @@
 DB:
-    *Create HistoricalPlayerToTeams Table
-    *Create PlayerToTeam Table
-    ~Create Enumeration Team Table and convert team entry to dropdown
+    *Create HistoricalPlayerToTeams Table DONE
+    *Create PlayerToTeam Table DONE
+    ~Create Enumeration Team Table and convert team entry to dropdown DONE
 Classes:
     *Create DBConnection Class:
         *SavePlayer() == DONE
-            *AddPlayerToTeam()
-            *AddPlayerToHistoricalTeams()
+            *AddPlayerToTeam() DONE
+            *AddPlayerToHistoricalTeams() DONE
         *loadPlayer()
         *updatePlayer()
         *deleterPlayer()
-        *loadPlayers()
+        *loadPlayers() DONE
         *loadTeams() DONE
 Form:
-    *Create and link grid to DB
+    *Create and link grid to DB DONE
     *Validation
     *Double Check Tabbing
+    *Clear on Submit
+    *Add Inches to height field
+    Validation:

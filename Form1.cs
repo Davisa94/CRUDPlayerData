@@ -55,6 +55,11 @@ namespace WindowsFormsApp1
             dbo.AddPlayerToTeams(player, lastInsertId);
             MessageBox.Show("Thank you for your input");
             //TODO CLEAR EACH CONTROL
+            firstNameTextBox.Text = "";
+            middleNameTextBox.Text = "";
+            lastNameTextBox = "";
+            jerseyNumTextBox = "";
+            heightTextBox = "";
             //TODO UPDATE THE GRID VIEW WITH NEW ENTRY
 
         }
