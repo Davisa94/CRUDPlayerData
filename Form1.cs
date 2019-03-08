@@ -43,10 +43,16 @@ namespace WindowsFormsApp1
             player.DateOfBirth = Convert.ToDateTime(dateTimePicker1.Text);
             player.CurrentTeam = currentTeamComboBox.Text;
 
-            //TODO: capture past teams form new input type
+            //Capture each team that was checked
+            foreach(object itemChecked in checkedListBox1.CheckedItems)
+            {
+                player.PastTeams.Add(itemChecked.ToString());
+            }
             //create a DBConnection and insert the player Data
             DBConnection dbo = new DBConnection();
             dbo.SavePlayer(player);
+            MessageBox.Show("Thank you for your input");
+            //TODO CLEAR EACH CONTROL
 
         }
 
@@ -57,15 +63,17 @@ namespace WindowsFormsApp1
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'playerTeamDataDataSet.playerInfo' table. You can move, or remove it, as needed.
+            this.playerInfoTableAdapter.Fill(this.playerTeamDataDataSet.playerInfo);
+            //TODO: LOAD PLAYER LIST BY DEFAULT;
             //create DB object
             DBConnection dbo = new DBConnection();
             //create the list
             List<string> CurrentTeamNames = new List<string>();
             List<string> PastTeamNames = new List<string>();
 
-            CurrentTeamNames = dbo.GetTeams();
-            PastTeamNames = CurrentTeamNames;
-
+            CurrentTeamNames = dbo.GetTeams();  
+            PastTeamNames = dbo.GetTeams();
             this.currentTeamComboBox.DataSource = CurrentTeamNames;
             this.checkedListBox1.DataSource = PastTeamNames;
         }
@@ -121,6 +129,11 @@ namespace WindowsFormsApp1
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

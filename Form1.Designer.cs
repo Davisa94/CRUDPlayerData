@@ -30,6 +30,7 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label2 = new System.Windows.Forms.Label();
             this.firstNameTextBox = new System.Windows.Forms.TextBox();
             this.lastNameTextBox = new System.Windows.Forms.TextBox();
@@ -49,6 +50,20 @@ namespace WindowsFormsApp1
             this.label10 = new System.Windows.Forms.Label();
             this.currentTeamComboBox = new System.Windows.Forms.ComboBox();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.playerTeamDataDataSet = new WindowsFormsApp1.PlayerTeamDataDataSet();
+            this.playerInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.playerInfoTableAdapter = new WindowsFormsApp1.PlayerTeamDataDataSetTableAdapters.playerInfoTableAdapter();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.middleNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateOfBirthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.heightInchesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jerseyNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerTeamDataDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerInfoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -222,11 +237,89 @@ namespace WindowsFormsApp1
             this.checkedListBox1.Size = new System.Drawing.Size(353, 123);
             this.checkedListBox1.TabIndex = 23;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.firstNameDataGridViewTextBoxColumn,
+            this.middleNameDataGridViewTextBoxColumn,
+            this.lastNameDataGridViewTextBoxColumn,
+            this.dateOfBirthDataGridViewTextBoxColumn,
+            this.heightInchesDataGridViewTextBoxColumn,
+            this.jerseyNumberDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.playerInfoBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(411, 57);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(968, 521);
+            this.dataGridView1.TabIndex = 24;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // playerTeamDataDataSet
+            // 
+            this.playerTeamDataDataSet.DataSetName = "PlayerTeamDataDataSet";
+            this.playerTeamDataDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // playerInfoBindingSource
+            // 
+            this.playerInfoBindingSource.DataMember = "playerInfo";
+            this.playerInfoBindingSource.DataSource = this.playerTeamDataDataSet;
+            // 
+            // playerInfoTableAdapter
+            // 
+            this.playerInfoTableAdapter.ClearBeforeFill = true;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // firstNameDataGridViewTextBoxColumn
+            // 
+            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn.HeaderText = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+            // 
+            // middleNameDataGridViewTextBoxColumn
+            // 
+            this.middleNameDataGridViewTextBoxColumn.DataPropertyName = "MiddleName";
+            this.middleNameDataGridViewTextBoxColumn.HeaderText = "MiddleName";
+            this.middleNameDataGridViewTextBoxColumn.Name = "middleNameDataGridViewTextBoxColumn";
+            // 
+            // lastNameDataGridViewTextBoxColumn
+            // 
+            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
+            this.lastNameDataGridViewTextBoxColumn.HeaderText = "LastName";
+            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            // 
+            // dateOfBirthDataGridViewTextBoxColumn
+            // 
+            this.dateOfBirthDataGridViewTextBoxColumn.DataPropertyName = "DateOfBirth";
+            this.dateOfBirthDataGridViewTextBoxColumn.HeaderText = "DateOfBirth";
+            this.dateOfBirthDataGridViewTextBoxColumn.Name = "dateOfBirthDataGridViewTextBoxColumn";
+            // 
+            // heightInchesDataGridViewTextBoxColumn
+            // 
+            this.heightInchesDataGridViewTextBoxColumn.DataPropertyName = "HeightInches";
+            this.heightInchesDataGridViewTextBoxColumn.HeaderText = "HeightInches";
+            this.heightInchesDataGridViewTextBoxColumn.Name = "heightInchesDataGridViewTextBoxColumn";
+            // 
+            // jerseyNumberDataGridViewTextBoxColumn
+            // 
+            this.jerseyNumberDataGridViewTextBoxColumn.DataPropertyName = "JerseyNumber";
+            this.jerseyNumberDataGridViewTextBoxColumn.HeaderText = "JerseyNumber";
+            this.jerseyNumberDataGridViewTextBoxColumn.Name = "jerseyNumberDataGridViewTextBoxColumn";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1448, 767);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.currentTeamComboBox);
             this.Controls.Add(this.middleNameTextBox);
@@ -249,6 +342,9 @@ namespace WindowsFormsApp1
             this.Name = "Form1";
             this.Text = "PlayerData";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerTeamDataDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerInfoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -274,6 +370,17 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox currentTeamComboBox;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private PlayerTeamDataDataSet playerTeamDataDataSet;
+        private System.Windows.Forms.BindingSource playerInfoBindingSource;
+        private PlayerTeamDataDataSetTableAdapters.playerInfoTableAdapter playerInfoTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn middleNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateOfBirthDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn heightInchesDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jerseyNumberDataGridViewTextBoxColumn;
     }
 }
 
