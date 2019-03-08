@@ -154,15 +154,16 @@ namespace WindowsFormsApp1
             this.heightTextBox.Name = "heightTextBox";
             this.heightTextBox.Size = new System.Drawing.Size(251, 22);
             this.heightTextBox.TabIndex = 5;
+            this.heightTextBox.TextChanged += new System.EventHandler(this.heightTextBox_TextChanged);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(19, 176);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(53, 17);
+            this.label6.Size = new System.Drawing.Size(104, 17);
             this.label6.TabIndex = 10;
-            this.label6.Text = "Height:";
+            this.label6.Text = "Height(Inches):";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label8
@@ -267,9 +268,9 @@ namespace WindowsFormsApp1
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(405, 470);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(144, 20);
+            this.label11.Size = new System.Drawing.Size(526, 20);
             this.label11.TabIndex = 26;
-            this.label11.Text = "Player Information";
+            this.label11.Text = "Player Information (click on a players info to pull up team information)";
             this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // playerInfoBindingSource

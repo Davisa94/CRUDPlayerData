@@ -38,43 +38,148 @@ namespace WindowsFormsApp1
 
         private void submitButton_Click(object sender, EventArgs e)
         {
+            Validation validator = new Validation();
+            bool validInfo = false;
+            bool validFirstName = false;
+            bool validMiddleName = false;
+            bool validLastName = false;
+            bool validJerseyNum = false;
+            bool validHeight = false;
+            string message = "Please Check the following fields:\n";
+            
+            //validate:
+            //validate names:
             Player player = new Player();
-            player.FirstName = firstNameTextBox.Text;
-            player.MiddleName = middleNameTextBox.Text;
-            player.LastName = lastNameTextBox.Text;
-            player.JerseyNum = Convert.ToInt32(jerseyNumTextBox.Text);
-            player.HeightInches = Convert.ToDecimal(heightTextBox.Text);
-            player.DateOfBirth = Convert.ToDateTime(dateTimePicker1.Text);
-            player.CurrentTeam = currentTeamComboBox.Text;
+            if (firstNameTextBox.Text != "")
+            {
+                player.FirstName = firstNameTextBox.Text;
+            }
+            else
+            {
+                message += "No first name entered\n\n";
+            }
+            if (middleNameTextBox.Text != "")
+            {
+                player.MiddleName = middleNameTextBox.Text;
+            }
+            else
+            {
+                message += "No middle name entered\n\n";
+            }
+            if (lastNameTextBox.Text != "")
+            {
+                player.LastName = lastNameTextBox.Text;
+            }
+            else
+            {
+                message += "No last name entered\n\n";
+            }
+            if (jerseyNumTextBox.Text != "")
+            {
+                player.JerseyNum = Convert.ToInt32(jerseyNumTextBox.Text);
 
+            }
+            else
+            {
+                player.JerseyNum = -1;
+                message += "No Jersey Number Entered\n\n";
+            }
+            if (heightTextBox.Text != "")
+            {
+                player.HeightInches = Convert.ToDecimal(heightTextBox.Text);
+            }
+            else
+            {
+                message += "No Height Entered\n\n";
+                player.HeightInches = -1;
+            }
+            if (jerseyNumTextBox.Text != "")
+            {
+                player.DateOfBirth = Convert.ToDateTime(dateTimePicker1.Text);
+            }
+            if (currentTeamComboBox.Text != "")
+            {
+                player.CurrentTeam = currentTeamComboBox.Text;
+            }
+            else
+                message += "Please enter A current team\n\n";
+            
+            //validate
+            validFirstName = validator.ValidateName(player.FirstName);
+            validMiddleName = validator.ValidateName(player.MiddleName);
+            validLastName = validator.ValidateName(player.LastName);
+            validJerseyNum = validator.ValidateWholeNumber(player.JerseyNum.ToString());
+            validHeight = false;
+            if (validator.ValidateDecimalNumbers(player.HeightInches.ToString()) || validator.ValidateWholeNumber(player.HeightInches.ToString()))
+            {
+                validHeight = true;
+            }
+
+            if (!validFirstName)
+            {
+                message += "Invalid First name, only letters are allowed; No spaces \n\n";
+            }
+            if (!validMiddleName)
+            {
+                message += "Invalid Middle name, only letters are allowed; No spaces\n\n";
+            }
+            if (!validLastName)
+            {
+                message += "Invalid Last name, only letters are allowed; No spaces\n\n";
+            }
+            if (!validJerseyNum)
+            {
+                message += "Invalid Jersey number, must be two numeric digits; No Spaces\n\n";
+            }
+            if (!validHeight)
+            {
+                message += "Invalid Height, must be the value in inches (two numeric digits)\n\tOptionaly followed by a decimal and numeric digits; No Spaces\n\n";
+            }
+            if (validFirstName && validMiddleName && validLastName && validJerseyNum && validHeight)
+            {
+                validInfo = true;
+            }
             //Capture each team that was checked
-            foreach(object itemChecked in checkedListBox1.CheckedItems)
+            foreach (object itemChecked in checkedListBox1.CheckedItems)
             {
                 player.PastTeams.Add(itemChecked.ToString());
+                if (itemChecked.ToString() == player.CurrentTeam)
+                {
+                    message += "Cannot choose a team as both past and current: " + player.CurrentTeam + " \n\n";
+                    validInfo = false;
+                }
             }
-            //create a DBConnection and insert the player Data
-            DBConnection dbo = new DBConnection();
-            int lastInsertId = dbo.SavePlayer(player);
-            //TODO add player to teams past and present;
-            dbo.AddPlayerToTeams(player, lastInsertId);
-            MessageBox.Show("Thank you for your input");
-            //TODO CLEAR EACH CONTROL
-            firstNameTextBox.Text = "";
-            middleNameTextBox.Text = "";
-            lastNameTextBox.Text = "";
-            jerseyNumTextBox.Text = "";
-            heightTextBox.Text = "";
-            dateTimePicker1.Value = Convert.ToDateTime("6/15/1994");
-            currentTeamComboBox.SelectedIndex = -1;
-            foreach (int index in checkedListBox1.CheckedIndices)
+            if (validInfo)
             {
-                checkedListBox1.SetItemCheckState(index, CheckState.Unchecked);
+
+                
+                //create a DBConnection and insert the player Data
+                DBConnection dbo = new DBConnection();
+                int lastInsertId = dbo.SavePlayer(player);
+                //TODO add player to teams past and present;
+                dbo.AddPlayerToTeams(player, lastInsertId);
+                MessageBox.Show("Thank you for your input");
+                //TODO CLEAR EACH CONTROL
+                firstNameTextBox.Text = "";
+                middleNameTextBox.Text = "";
+                lastNameTextBox.Text = "";
+                jerseyNumTextBox.Text = "";
+                heightTextBox.Text = "";
+                dateTimePicker1.Value = Convert.ToDateTime("6/15/1994");
+                currentTeamComboBox.SelectedIndex = -1;
+                foreach (int index in checkedListBox1.CheckedIndices)
+                {
+                    checkedListBox1.SetItemCheckState(index, CheckState.Unchecked);
+                }
+
+                //this should redraw after submit:
+
+                dataGridView1.DataSource = dbo.GetPlayersInfo();
             }
+            else
+                MessageBox.Show(message);
+           
             
-            //this should redraw after submit:
-            
-            dataGridView1.DataSource = dbo.GetPlayersInfo();
-            //TODO UPDATE THE GRID VIEW WITH NEW ENTRY
 
         }
 
@@ -159,13 +264,18 @@ namespace WindowsFormsApp1
         {
             int value = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
             DBConnection dbo = new DBConnection();
-            MessageBox.Show(value.ToString());
+            
             DataTable PlayerTeamInfo = new DataTable();
 
             this.dataGridView2.DataSource = dbo.GetPlayerTeamInfo(value);
         }
 
         private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void heightTextBox_TextChanged(object sender, EventArgs e)
         {
 
         }

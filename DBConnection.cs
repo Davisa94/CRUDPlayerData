@@ -100,8 +100,7 @@ namespace WindowsFormsApp1
                     //Set the command text equal to the query:
                     command.CommandText = query;
                     //Prepare the variables:
-                    MessageBox.Show(playerId.ToString());
-                    MessageBox.Show(CurrentTeamId.ToString());
+                    
                     command.Parameters.AddWithValue("@playerId", playerId);
                     command.Parameters.AddWithValue("@teamId", CurrentTeamId);
                     connection.Open();
@@ -190,7 +189,7 @@ namespace WindowsFormsApp1
                 PlayerName += " ";
                 PlayerName += reader["LastName"].ToString();
             }
-            MessageBox.Show(PlayerName);
+            
             reader.Close();
             //Get the Current Team from the Database
             query = "SELECT TeamName FROM PlayerTeamData.dbo.Teams WHERE Id = (SELECT team_id FROM PlayerTeamData.dbo.PlayerToTeam WHERE player_id =" + id.ToString() +");"; 

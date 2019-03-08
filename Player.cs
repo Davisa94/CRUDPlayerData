@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1
 {
+
     public class Player
     {
         public int Id { get; set; }
@@ -19,6 +20,15 @@ namespace WindowsFormsApp1
         public List<string> PastTeams = new List<string>();
         
         public string CurrentTeam { get; set; }
+        public Player()
+        {
+            FirstName = "";
+            MiddleName = "";
+            LastName = "";
+            CurrentTeam = "";
+            Id = -1;
+            JerseyNum = -1;
+        }
 
     }
 }
