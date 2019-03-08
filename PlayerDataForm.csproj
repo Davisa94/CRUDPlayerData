@@ -61,6 +61,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PlayerTeamDataDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PlayerTeamDataDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Validation.cs" />
     <Compile Include="DBConnection.cs" />
     <Compile Include="Player.cs" />
@@ -115,6 +120,17 @@
     </None>
     <None Include="PlayerTeamDataDataSet1.xss">
       <DependentUpon>PlayerTeamDataDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="PlayerTeamDataDataSet2.xsc">
+      <DependentUpon>PlayerTeamDataDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="PlayerTeamDataDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PlayerTeamDataDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PlayerTeamDataDataSet2.xss">
+      <DependentUpon>PlayerTeamDataDataSet2.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
