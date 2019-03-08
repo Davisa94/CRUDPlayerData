@@ -50,9 +50,12 @@ namespace WindowsFormsApp1
             }
             //create a DBConnection and insert the player Data
             DBConnection dbo = new DBConnection();
-            dbo.SavePlayer(player);
+            int lastInsertId = dbo.SavePlayer(player);
+            //TODO add player to teams past and present;
+            //dbo.AddPlayerToTeams(player, lastInsertId);
             MessageBox.Show("Thank you for your input");
             //TODO CLEAR EACH CONTROL
+            //TODO UPDATE THE GRID VIEW WITH NEW ENTRY
 
         }
 
@@ -135,11 +138,17 @@ namespace WindowsFormsApp1
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            string value = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+            int value = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
+            DBConnection dbo = new DBConnection();
+            MessageBox.Show(value.ToString());
+            DataTable PlayerTeamInfo = new DataTable();
 
-            MessageBox.Show(value);
-            DataSet PlayerInfo = new DataSet();
-            this.dataGridView1.DataSource = 
+            this.dataGridView2.DataSource = dbo.getPlayerTeamInfo(value);
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
