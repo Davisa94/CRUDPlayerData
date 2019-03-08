@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -203,8 +204,27 @@ namespace WindowsFormsApp1
             PastTeamNames = dbo.GetTeams();
             this.currentTeamComboBox.DataSource = CurrentTeamNames;
             this.checkedListBox1.DataSource = PastTeamNames;
+            
         }
 
+        private bool CheckIfDatabaseExists()
+        {
+            SqlConnection connection = new SqlConnection(@"Data Source =.\sqlexpress'Initial Catalog=Collage; Integrated Security=False");
+            try
+            {
+                connection.Open();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        private void GenerateDatabase()
+        {
+
+        }
         private void label4_Click(object sender, EventArgs e)
         {
 
