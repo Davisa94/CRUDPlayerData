@@ -11,7 +11,7 @@ Classes:
         *updatePlayer()
         *deleterPlayer()
         *loadPlayers()
-        *loadTeams()
+        *loadTeams() DONE
 Form:
     *Create and link grid to DB
     *Validation

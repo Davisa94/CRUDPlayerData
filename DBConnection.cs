@@ -57,36 +57,40 @@ namespace WindowsFormsApp1
         public int GetTeamId(string TeamName)
         {
             int id = 0;
-            string query = "Select Id FROM PlayerTeamData.dbo.Teams WHERE TeamName like" + TeamName;
+            string query = "Select Id FROM PlayerTeamData.dbo.Teams WHERE TeamName like '" + TeamName + "'";
             SqlConnection connection = new SqlConnection(this.connectString);
             SqlCommand commmand = new SqlCommand(query, connection);
+            connection.Open();
             SqlDataReader reader = commmand.ExecuteReader();
             while (reader.Read())
             {
-                TeamName = reader["TeamName"].ToString();
+                id = Convert.ToInt32(reader["Id"]);
             }
-
+            connection.Close();
             return id;
         }
-        public bool AddPlayerToTeams(Player player, int player_id)
+        // Adds the given player to its teams past and present
+        public int AddPlayerToTeams(Player player, int playerId)
         {
             //Add player to current team:
             int CurrentTeamId = this.GetTeamId(player.CurrentTeam);
-            int PastTeamId = 0;
+            List<int> PastTeamIds = new List<int>();
             //For each past team in the list do stuff:
             foreach (string TeamName in player.PastTeams)
             {
-                PastTeamId = this.GetTeamId(TeamName);
+                PastTeamIds.Add(this.GetTeamId(TeamName));
 
             }
+            //Insert the Current Team
             using (SqlConnection connection = new SqlConnection(this.connectString))
             {
+                int totalRows = 0;
                 //get Team Name:
                 //Create the insertion query
                 //TODO: is there a way to prepare this statment
                 //LEFT OFF: Change sql to insert intoplayer to team 
-                string query = "INSERT INTO PlayerTeamData.dbo.team (FirstName, MiddleName, LastName, DateOfBirth, HeightInches, JerseyNumber) " +
-                    " VALUES (@firstName,@middleName, @lastName, @DOB, @height, @jerseyNum)";
+                string query = "INSERT INTO PlayerTeamData.dbo.PlayerToTeam (player_id, team_id) " +
+                    " VALUES (@playerId,@teamId)";
                 //Prepare the query
                 using (SqlCommand command = new SqlCommand(query))
                 {
@@ -96,15 +100,46 @@ namespace WindowsFormsApp1
                     //Set the command text equal to the query:
                     command.CommandText = query;
                     //Prepare the variables:
-                    command.Parameters.AddWithValue("@firstName", player.FirstName);
-                    command.Parameters.AddWithValue("@middleName", player.MiddleName);
-                    command.Parameters.AddWithValue("@lastName", player.LastName);
-                    command.Parameters.AddWithValue("@DOB", player.DateOfBirth);
-                    command.Parameters.AddWithValue("@height", player.HeightInches);
-                    command.Parameters.AddWithValue("@jerseyNum", player.JerseyNum);
+                    MessageBox.Show(playerId.ToString());
+                    MessageBox.Show(CurrentTeamId.ToString());
+                    command.Parameters.AddWithValue("@playerId", playerId);
+                    command.Parameters.AddWithValue("@teamId", CurrentTeamId);
+                    connection.Open();
+                    totalRows = command.ExecuteNonQuery();
+                    connection.Close();
                 }
-                //TODO: add try catch:
-                return false;
+                //Insert the past teams:
+                foreach (int teamId in PastTeamIds)
+                {
+                    using (SqlConnection connection2 = new SqlConnection(this.connectString))
+                    {
+                        //get Team Name:
+                        //Create the insertion query
+                        //TODO: is there a way to prepare this statment
+                        //LEFT OFF: Change sql to insert intoplayer to team 
+                        query = "INSERT INTO PlayerTeamData.dbo.PlayerToPastTeams (Player_id, Team_id) " +
+                            " VALUES (@playerId,@teamId)";
+                        //Prepare the query
+                        using (SqlCommand command = new SqlCommand(query))
+                        {
+                            command.Connection = connection;
+                            //Set the command type
+                            command.CommandType = System.Data.CommandType.Text;
+                            //Set the command text equal to the query:
+                            command.CommandText = query;
+                            //Prepare the variables:
+                            command.Parameters.AddWithValue("@playerId", playerId);
+                            command.Parameters.AddWithValue("@teamId", teamId);
+                            connection.Open();
+                            totalRows += command.ExecuteNonQuery();
+                            connection.Close();
+                        }
+                        //TODO: add try catch:
+
+                    }
+                }
+                    
+                return totalRows;
             }
         }
 

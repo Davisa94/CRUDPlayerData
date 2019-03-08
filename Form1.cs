@@ -52,7 +52,7 @@ namespace WindowsFormsApp1
             DBConnection dbo = new DBConnection();
             int lastInsertId = dbo.SavePlayer(player);
             //TODO add player to teams past and present;
-            //dbo.AddPlayerToTeams(player, lastInsertId);
+            dbo.AddPlayerToTeams(player, lastInsertId);
             MessageBox.Show("Thank you for your input");
             //TODO CLEAR EACH CONTROL
             //TODO UPDATE THE GRID VIEW WITH NEW ENTRY
