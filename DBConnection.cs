@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -54,6 +55,21 @@ namespace WindowsFormsApp1
             //create list to store team names:
             List<string> TeamNames = new List<string>();
             //TODO: FIX CODE HERE
+            return TeamNames;
+        }
+        public DataSet getPlayerInfo(int id)
+        {
+            //create list to store team names:
+            DataSet PlayerInfo = new DataSet();
+            SqlConnection connection = new SqlConnection(this.connectString);
+            connection.Open();
+            string query = "Select * FROM PlayerTeamData.dbo.PlayerToTeam";
+            SqlCommand commmand = new SqlCommand(query, connection);
+            SqlDataReader reader = commmand.ExecuteReader();
+            while (reader.Read())
+            {
+                TeamNames.Add(reader["TeamName"].ToString());
+            }
             return TeamNames;
         }
         public List<string> GetTeams()

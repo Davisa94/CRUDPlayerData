@@ -61,6 +61,8 @@ namespace WindowsFormsApp1
             this.dateOfBirthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.heightInchesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.jerseyNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CurrentTeam = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PreviousTeams = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.playerTeamDataDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.playerInfoBindingSource)).BeginInit();
@@ -239,6 +241,8 @@ namespace WindowsFormsApp1
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -248,10 +252,13 @@ namespace WindowsFormsApp1
             this.lastNameDataGridViewTextBoxColumn,
             this.dateOfBirthDataGridViewTextBoxColumn,
             this.heightInchesDataGridViewTextBoxColumn,
-            this.jerseyNumberDataGridViewTextBoxColumn});
+            this.jerseyNumberDataGridViewTextBoxColumn,
+            this.CurrentTeam,
+            this.PreviousTeams});
             this.dataGridView1.DataSource = this.playerInfoBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(411, 57);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(968, 521);
             this.dataGridView1.TabIndex = 24;
@@ -313,6 +320,18 @@ namespace WindowsFormsApp1
             this.jerseyNumberDataGridViewTextBoxColumn.DataPropertyName = "JerseyNumber";
             this.jerseyNumberDataGridViewTextBoxColumn.HeaderText = "JerseyNumber";
             this.jerseyNumberDataGridViewTextBoxColumn.Name = "jerseyNumberDataGridViewTextBoxColumn";
+            // 
+            // CurrentTeam
+            // 
+            this.CurrentTeam.HeaderText = "CurrentTeam";
+            this.CurrentTeam.Name = "CurrentTeam";
+            this.CurrentTeam.ReadOnly = true;
+            // 
+            // PreviousTeams
+            // 
+            this.PreviousTeams.HeaderText = "PreviousTeams";
+            this.PreviousTeams.Name = "PreviousTeams";
+            this.PreviousTeams.ReadOnly = true;
             // 
             // Form1
             // 
@@ -381,6 +400,8 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.DataGridViewTextBoxColumn dateOfBirthDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn heightInchesDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn jerseyNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CurrentTeam;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PreviousTeams;
     }
 }
 

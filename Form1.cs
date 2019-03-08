@@ -135,7 +135,11 @@ namespace WindowsFormsApp1
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            string value = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
 
+            MessageBox.Show(value);
+            DataSet PlayerInfo = new DataSet();
+            this.dataGridView1.DataSource = 
         }
     }
 }
