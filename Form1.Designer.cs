@@ -105,9 +105,9 @@ namespace WindowsFormsApp1
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(16, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(302, 32);
+            this.label1.Size = new System.Drawing.Size(337, 32);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Edit Player Information";
+            this.label1.Text = "Create Player Information";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // submitButton
@@ -126,9 +126,9 @@ namespace WindowsFormsApp1
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(17, 266);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(141, 29);
+            this.label4.Size = new System.Drawing.Size(252, 29);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Past Teams";
+            this.label4.Text = "Past Teams(select all)";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // jerseyNumTextBox
