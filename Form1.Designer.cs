@@ -51,17 +51,8 @@ namespace WindowsFormsApp1
             this.currentTeamComboBox = new System.Windows.Forms.ComboBox();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.CurrentTeam = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PreviousTeams = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label11 = new System.Windows.Forms.Label();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.middleNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateOfBirthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.heightInchesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jerseyNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.playerInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.playerTeamDataDataSet = new WindowsFormsApp1.PlayerTeamDataDataSet();
             this.playerInfoTableAdapter = new WindowsFormsApp1.PlayerTeamDataDataSetTableAdapters.playerInfoTableAdapter();
@@ -249,19 +240,7 @@ namespace WindowsFormsApp1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.firstNameDataGridViewTextBoxColumn,
-            this.middleNameDataGridViewTextBoxColumn,
-            this.lastNameDataGridViewTextBoxColumn,
-            this.dateOfBirthDataGridViewTextBoxColumn,
-            this.heightInchesDataGridViewTextBoxColumn,
-            this.jerseyNumberDataGridViewTextBoxColumn,
-            this.CurrentTeam,
-            this.PreviousTeams});
-            this.dataGridView1.DataSource = this.playerInfoBindingSource1;
             this.dataGridView1.Location = new System.Drawing.Point(411, 57);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -269,18 +248,6 @@ namespace WindowsFormsApp1
             this.dataGridView1.Size = new System.Drawing.Size(968, 410);
             this.dataGridView1.TabIndex = 24;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // CurrentTeam
-            // 
-            this.CurrentTeam.HeaderText = "CurrentTeam";
-            this.CurrentTeam.Name = "CurrentTeam";
-            this.CurrentTeam.ReadOnly = true;
-            // 
-            // PreviousTeams
-            // 
-            this.PreviousTeams.HeaderText = "PreviousTeams";
-            this.PreviousTeams.Name = "PreviousTeams";
-            this.PreviousTeams.ReadOnly = true;
             // 
             // dataGridView2
             // 
@@ -304,55 +271,6 @@ namespace WindowsFormsApp1
             this.label11.TabIndex = 26;
             this.label11.Text = "Player Information";
             this.label11.Click += new System.EventHandler(this.label11_Click);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // firstNameDataGridViewTextBoxColumn
-            // 
-            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn.HeaderText = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
-            this.firstNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // middleNameDataGridViewTextBoxColumn
-            // 
-            this.middleNameDataGridViewTextBoxColumn.DataPropertyName = "MiddleName";
-            this.middleNameDataGridViewTextBoxColumn.HeaderText = "MiddleName";
-            this.middleNameDataGridViewTextBoxColumn.Name = "middleNameDataGridViewTextBoxColumn";
-            this.middleNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // lastNameDataGridViewTextBoxColumn
-            // 
-            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.HeaderText = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
-            this.lastNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dateOfBirthDataGridViewTextBoxColumn
-            // 
-            this.dateOfBirthDataGridViewTextBoxColumn.DataPropertyName = "DateOfBirth";
-            this.dateOfBirthDataGridViewTextBoxColumn.HeaderText = "DateOfBirth";
-            this.dateOfBirthDataGridViewTextBoxColumn.Name = "dateOfBirthDataGridViewTextBoxColumn";
-            this.dateOfBirthDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // heightInchesDataGridViewTextBoxColumn
-            // 
-            this.heightInchesDataGridViewTextBoxColumn.DataPropertyName = "HeightInches";
-            this.heightInchesDataGridViewTextBoxColumn.HeaderText = "HeightInches";
-            this.heightInchesDataGridViewTextBoxColumn.Name = "heightInchesDataGridViewTextBoxColumn";
-            this.heightInchesDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // jerseyNumberDataGridViewTextBoxColumn
-            // 
-            this.jerseyNumberDataGridViewTextBoxColumn.DataPropertyName = "JerseyNumber";
-            this.jerseyNumberDataGridViewTextBoxColumn.HeaderText = "JerseyNumber";
-            this.jerseyNumberDataGridViewTextBoxColumn.Name = "jerseyNumberDataGridViewTextBoxColumn";
-            this.jerseyNumberDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // playerInfoBindingSource
             // 
@@ -437,15 +355,6 @@ namespace WindowsFormsApp1
         private PlayerTeamDataDataSet playerTeamDataDataSet;
         private System.Windows.Forms.BindingSource playerInfoBindingSource;
         private PlayerTeamDataDataSetTableAdapters.playerInfoTableAdapter playerInfoTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn middleNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateOfBirthDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn heightInchesDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn jerseyNumberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CurrentTeam;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PreviousTeams;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.BindingSource playerInfoBindingSource1;

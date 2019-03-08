@@ -59,9 +59,9 @@ namespace WindowsFormsApp1
             int id = 0;
             string query = "Select Id FROM PlayerTeamData.dbo.Teams WHERE TeamName like '" + TeamName + "'";
             SqlConnection connection = new SqlConnection(this.connectString);
-            SqlCommand commmand = new SqlCommand(query, connection);
+            SqlCommand command = new SqlCommand(query, connection);
             connection.Open();
-            SqlDataReader reader = commmand.ExecuteReader();
+            SqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
                 id = Convert.ToInt32(reader["Id"]);
@@ -143,8 +143,21 @@ namespace WindowsFormsApp1
             }
         }
 
-
-        public DataTable getPlayerTeamInfo(int id)
+        public DataTable GetPlayersInfo()
+        {
+            SqlConnection connection = new SqlConnection(this.connectString);
+            DataTable dataTable = new DataTable();
+            connection.Open();
+            //Get player name
+            string query = "Select * FROM PlayerTeamData.dbo.playerInfo";
+            SqlCommand command = new SqlCommand(query, connection);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
+            dataAdapter.Fill(dataTable);
+            connection.Close();
+            dataAdapter.Dispose();
+            return dataTable;
+        }
+        public DataTable GetPlayerTeamInfo(int id)
         {
             //create list to store team names:
             bool init = false;
@@ -169,8 +182,8 @@ namespace WindowsFormsApp1
 
             //Get player name
             string query = "Select FirstName, LastName FROM PlayerTeamData.dbo.playerInfo WHERE Id=" + id.ToString();
-            SqlCommand commmand = new SqlCommand(query, connection);
-            SqlDataReader reader = commmand.ExecuteReader();
+            SqlCommand command = new SqlCommand(query, connection);
+            SqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
                 PlayerName = reader["FirstName"].ToString();
@@ -181,8 +194,8 @@ namespace WindowsFormsApp1
             reader.Close();
             //Get the Current Team from the Database
             query = "SELECT TeamName FROM PlayerTeamData.dbo.Teams WHERE Id = (SELECT team_id FROM PlayerTeamData.dbo.PlayerToTeam WHERE player_id =" + id.ToString() +");"; 
-            commmand = new SqlCommand(query, connection);
-            reader = commmand.ExecuteReader();
+            command = new SqlCommand(query, connection);
+            reader = command.ExecuteReader();
             while (reader.Read())
             {
                 CurrentTeam = reader["TeamName"].ToString();
@@ -190,8 +203,8 @@ namespace WindowsFormsApp1
             reader.Close();
             //Get a list of Past Teams ids from the Database and add them to rows
             query = "SELECT team_id FROM PlayerTeamData.dbo.PlayerToPastTeams WHERE player_id =" + id.ToString();
-            commmand = new SqlCommand(query, connection);
-            reader = commmand.ExecuteReader();
+            command = new SqlCommand(query, connection);
+            reader = command.ExecuteReader();
             while (reader.Read())
             {
                 PastTeams.Add(Convert.ToInt32(reader["team_id"]));
@@ -201,8 +214,8 @@ namespace WindowsFormsApp1
             foreach (int team_id in PastTeams)
             {
                 query = "SELECT TeamName FROM PlayerTeamData.dbo.Teams WHERE Id =" + team_id.ToString();
-                commmand = new SqlCommand(query, connection);
-                reader = commmand.ExecuteReader();
+                command = new SqlCommand(query, connection);
+                reader = command.ExecuteReader();
                 while (reader.Read())
                 {
                     if (init == false)
@@ -236,8 +249,8 @@ namespace WindowsFormsApp1
             SqlConnection connection = new SqlConnection(this.connectString);
             connection.Open();
             string query = "Select TeamName FROM PlayerTeamData.dbo.Teams";
-            SqlCommand commmand = new SqlCommand(query, connection);
-            SqlDataReader reader = commmand.ExecuteReader();
+            SqlCommand command = new SqlCommand(query, connection);
+            SqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
                 TeamNames.Add(reader["TeamName"].ToString());

@@ -15,6 +15,10 @@ namespace WindowsFormsApp1
         public Form1()
         {
             InitializeComponent();
+            //TODO Initialize Gridview1
+            //TODO Initialize Gridview1
+            DBConnection dbo = new DBConnection();
+            dataGridView1.DataSource = dbo.GetPlayersInfo();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -68,9 +72,8 @@ namespace WindowsFormsApp1
             }
             
             //this should redraw after submit:
-            dataGridView1.AutoGenerateColumns = true;
-            dataGridView1.Invalidate();
-            dataGridView1.Refresh();
+            
+            dataGridView1.DataSource = dbo.GetPlayersInfo();
             //TODO UPDATE THE GRID VIEW WITH NEW ENTRY
 
         }
@@ -159,7 +162,7 @@ namespace WindowsFormsApp1
             MessageBox.Show(value.ToString());
             DataTable PlayerTeamInfo = new DataTable();
 
-            this.dataGridView2.DataSource = dbo.getPlayerTeamInfo(value);
+            this.dataGridView2.DataSource = dbo.GetPlayerTeamInfo(value);
         }
 
         private void label11_Click(object sender, EventArgs e)
