@@ -36,9 +36,27 @@ namespace WindowsFormsApp1
         {
 
         }
-
+        private void ReloadTeamInfo()
+        {
+            RemoteDBConnection dbo = new RemoteDBConnection();
+            //create the list
+            List<string> CurrentTeamNames = new List<string>();
+            List<string> PastTeamNames = new List<string>();
+            try
+            {
+                CurrentTeamNames = dbo.GetTeams();
+                PastTeamNames = dbo.GetTeams();
+                this.currentTeamComboBox.DataSource = CurrentTeamNames;
+                this.checkedListBox1.DataSource = PastTeamNames;
+            }
+            catch
+            {
+                MessageBox.Show("Couldnt connect to database");
+            }
+        }
         private void submitButton_Click(object sender, EventArgs e)
         {
+            ReloadTeamInfo();
             Validation validator = new Validation();
             bool validInfo = false;
             bool validFirstName = false;
@@ -192,18 +210,25 @@ namespace WindowsFormsApp1
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'playerTeamDataDataSet.playerInfo' table. You can move, or remove it, as needed.
-            this.playerInfoTableAdapter.Fill(this.playerTeamDataDataSet.playerInfo);
+           
             //TODO: LOAD PLAYER LIST BY DEFAULT;
             //create DB object
             RemoteDBConnection dbo = new RemoteDBConnection();
             //create the list
             List<string> CurrentTeamNames = new List<string>();
             List<string> PastTeamNames = new List<string>();
-
-            CurrentTeamNames = dbo.GetTeams();  
-            PastTeamNames = dbo.GetTeams();
-            this.currentTeamComboBox.DataSource = CurrentTeamNames;
-            this.checkedListBox1.DataSource = PastTeamNames;
+            try
+            {
+                CurrentTeamNames = dbo.GetTeams();
+                PastTeamNames = dbo.GetTeams();
+                this.currentTeamComboBox.DataSource = CurrentTeamNames;
+                this.checkedListBox1.DataSource = PastTeamNames;
+            }
+            catch
+            {
+                MessageBox.Show("Couldnt connect to database");
+            }
+            
             
         }
 
@@ -296,6 +321,11 @@ namespace WindowsFormsApp1
         }
 
         private void heightTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

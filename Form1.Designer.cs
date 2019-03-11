@@ -55,7 +55,6 @@ namespace WindowsFormsApp1
             this.label11 = new System.Windows.Forms.Label();
             this.playerInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.playerTeamDataDataSet = new WindowsFormsApp1.PlayerTeamDataDataSet();
-            this.playerInfoTableAdapter = new WindowsFormsApp1.PlayerTeamDataDataSetTableAdapters.playerInfoTableAdapter();
             this.playerInfoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -223,6 +222,37 @@ namespace WindowsFormsApp1
             // currentTeamComboBox
             // 
             this.currentTeamComboBox.FormattingEnabled = true;
+            this.currentTeamComboBox.Items.AddRange(new object[] {
+            "Boston Celtics",
+            "Brooklyn Nets",
+            "New York Knicks",
+            "Philadelphia 76ers",
+            "Toronto Raptors",
+            "Golden State Warriors",
+            "Los Angeles Clippers",
+            "Los Angeles Lakers",
+            "Phoenix Suns",
+            "Sacramento Kings",
+            "Chicago Bulls",
+            "Cleveland Cavaliers",
+            "Detroit Pistons",
+            "Indiana Pacers",
+            "Milwaukee Bucks",
+            "Dallas Mavericks",
+            "Houston Rockets",
+            "Memphis Grizzlies",
+            "New Orleans Hornets",
+            "San Antonio Spurs",
+            "Atlanta Hawks",
+            "Charlotte Bobcats",
+            "Miami Heat",
+            "Orlando Magic",
+            "Washington Wizards",
+            "Denver Nuggets",
+            "Minnesota Timberwolves",
+            "Oklahoma City Thunder",
+            "Portland Trail Blazers",
+            "Utah Jazz"});
             this.currentTeamComboBox.Location = new System.Drawing.Point(124, 204);
             this.currentTeamComboBox.Name = "currentTeamComboBox";
             this.currentTeamComboBox.Size = new System.Drawing.Size(251, 24);
@@ -232,10 +262,42 @@ namespace WindowsFormsApp1
             // 
             this.checkedListBox1.CheckOnClick = true;
             this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Items.AddRange(new object[] {
+            "Boston Celtics",
+            "Brooklyn Nets",
+            "New York Knicks",
+            "Philadelphia 76ers",
+            "Toronto Raptors",
+            "Golden State Warriors",
+            "Los Angeles Clippers",
+            "Los Angeles Lakers",
+            "Phoenix Suns",
+            "Sacramento Kings",
+            "Chicago Bulls",
+            "Cleveland Cavaliers",
+            "Detroit Pistons",
+            "Indiana Pacers",
+            "Milwaukee Bucks",
+            "Dallas Mavericks",
+            "Houston Rockets",
+            "Memphis Grizzlies",
+            "New Orleans Hornets",
+            "San Antonio Spurs",
+            "Atlanta Hawks",
+            "Charlotte Bobcats",
+            "Miami Heat",
+            "Orlando Magic",
+            "Washington Wizards",
+            "Denver Nuggets",
+            "Minnesota Timberwolves",
+            "Oklahoma City Thunder",
+            "Portland Trail Blazers",
+            "Utah Jazz"});
             this.checkedListBox1.Location = new System.Drawing.Point(22, 298);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(353, 123);
             this.checkedListBox1.TabIndex = 23;
+            this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
             // 
             // dataGridView1
             // 
@@ -282,10 +344,6 @@ namespace WindowsFormsApp1
             // 
             this.playerTeamDataDataSet.DataSetName = "PlayerTeamDataDataSet";
             this.playerTeamDataDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // playerInfoTableAdapter
-            // 
-            this.playerInfoTableAdapter.ClearBeforeFill = true;
             // 
             // playerInfoBindingSource1
             // 
@@ -355,7 +413,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.DataGridView dataGridView1;
         private PlayerTeamDataDataSet playerTeamDataDataSet;
         private System.Windows.Forms.BindingSource playerInfoBindingSource;
-        private PlayerTeamDataDataSetTableAdapters.playerInfoTableAdapter playerInfoTableAdapter;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.BindingSource playerInfoBindingSource1;
