@@ -1,18 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.SqlClient;
+using MySql.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace WindowsFormsApp1
 {
-
-    class DBConnection
+    class RemoteDBConnection
     {
-        private string connectString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\PlayerTeamData.mdf;Integrated Security=True";
+        private string connectStringRemote = @"server=skycraftia.duckdns.org;user id=remote;persistsecurityinfo=True;database=PlayerTeamData";
+        private string connectStringOld = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=master;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+
         public int SavePlayer(Player player)
         {
             int lastId = -1;
@@ -20,7 +22,7 @@ namespace WindowsFormsApp1
             string middleName = player.MiddleName;
             if (middleName == "") { middleName = "NULL"; }
             //Create connection string for local DB
-            using (SqlConnection connection = new SqlConnection(this.connectString))
+            using (MySqlConnection connection = new MySqlConnection(this.connectStringRemote))
             {
                 //Create the insertion query
                 //TODO: is there a way to prepare this statment
@@ -28,7 +30,7 @@ namespace WindowsFormsApp1
                     "OUTPUT INSERTED.ID" +
                     " VALUES (@firstName,@middleName, @lastName, @DOB, @height, @jerseyNum)";
                 //Prepare the query
-                using (SqlCommand command = new SqlCommand(query))
+                using (MySqlCommand command = new MySqlCommand(query))
                 {
                     command.Connection = connection;
                     //Set the command type
@@ -51,7 +53,7 @@ namespace WindowsFormsApp1
                     //get last insert id:
 
                 }
-            }  
+            }
             return lastId;
         }
 
@@ -59,10 +61,10 @@ namespace WindowsFormsApp1
         {
             int id = 0;
             string query = "Select Id FROM PlayerTeamData.dbo.Teams WHERE TeamName like '" + TeamName + "'";
-            SqlConnection connection = new SqlConnection(this.connectString);
-            SqlCommand command = new SqlCommand(query, connection);
+            MySqlConnection connection = new MySqlConnection(this.connectStringRemote);
+            MySqlCommand command = new MySqlCommand(query, connection);
             connection.Open();
-            SqlDataReader reader = command.ExecuteReader();
+            MySqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
                 id = Convert.ToInt32(reader["Id"]);
@@ -83,7 +85,7 @@ namespace WindowsFormsApp1
 
             }
             //Insert the Current Team
-            using (SqlConnection connection = new SqlConnection(this.connectString))
+            using (MySqlConnection connection = new MySqlConnection(this.connectStringRemote))
             {
                 int totalRows = 0;
                 //get Team Name:
@@ -93,7 +95,7 @@ namespace WindowsFormsApp1
                 string query = "INSERT INTO PlayerTeamData.dbo.PlayerToTeam (player_id, team_id) " +
                     " VALUES (@playerId,@teamId)";
                 //Prepare the query
-                using (SqlCommand command = new SqlCommand(query))
+                using (MySqlCommand command = new MySqlCommand(query))
                 {
                     command.Connection = connection;
                     //Set the command type
@@ -101,7 +103,7 @@ namespace WindowsFormsApp1
                     //Set the command text equal to the query:
                     command.CommandText = query;
                     //Prepare the variables:
-                    
+
                     command.Parameters.AddWithValue("@playerId", playerId);
                     command.Parameters.AddWithValue("@teamId", CurrentTeamId);
                     connection.Open();
@@ -111,7 +113,7 @@ namespace WindowsFormsApp1
                 //Insert the past teams:
                 foreach (int teamId in PastTeamIds)
                 {
-                    using (SqlConnection connection2 = new SqlConnection(this.connectString))
+                    using (MySqlConnection connection2 = new MySqlConnection(this.connectStringRemote))
                     {
                         //get Team Name:
                         //Create the insertion query
@@ -120,7 +122,7 @@ namespace WindowsFormsApp1
                         query = "INSERT INTO PlayerTeamData.dbo.PlayerToPastTeams (Player_id, Team_id) " +
                             " VALUES (@playerId,@teamId)";
                         //Prepare the query
-                        using (SqlCommand command = new SqlCommand(query))
+                        using (MySqlCommand command = new MySqlCommand(query))
                         {
                             command.Connection = connection;
                             //Set the command type
@@ -138,20 +140,20 @@ namespace WindowsFormsApp1
 
                     }
                 }
-                    
+
                 return totalRows;
             }
         }
 
         public DataTable GetPlayersInfo()
         {
-            SqlConnection connection = new SqlConnection(this.connectString);
+            MySqlConnection connection = new MySqlConnection(this.connectStringRemote);
             DataTable dataTable = new DataTable();
             connection.Open();
             //Get player name
             string query = "Select * FROM PlayerTeamData.dbo.playerInfo";
-            SqlCommand command = new SqlCommand(query, connection);
-            SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
+            MySqlCommand command = new MySqlCommand(query, connection);
+            MySqlDataAdapter dataAdapter = new MySqlDataAdapter(command);
             dataAdapter.Fill(dataTable);
             connection.Close();
             dataAdapter.Dispose();
@@ -170,7 +172,7 @@ namespace WindowsFormsApp1
             PlayerTeamInfo.Columns.Add(new DataColumn("PastTeams", typeof(string)));
             DataRow initRow = PlayerTeamInfo.NewRow();
 
-            SqlConnection connection = new SqlConnection(this.connectString);
+            MySqlConnection connection = new MySqlConnection(this.connectStringRemote);
 
             connection.Open();
             //BEGIN TODO:
@@ -182,19 +184,19 @@ namespace WindowsFormsApp1
 
             //Get player name
             string query = "Select FirstName, LastName FROM PlayerTeamData.dbo.playerInfo WHERE Id=" + id.ToString();
-            SqlCommand command = new SqlCommand(query, connection);
-            SqlDataReader reader = command.ExecuteReader();
+            MySqlCommand command = new MySqlCommand(query, connection);
+            MySqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
                 PlayerName = reader["FirstName"].ToString();
                 PlayerName += " ";
                 PlayerName += reader["LastName"].ToString();
             }
-            
+
             reader.Close();
             //Get the Current Team from the Database
-            query = "SELECT TeamName FROM PlayerTeamData.dbo.Teams WHERE Id = (SELECT team_id FROM PlayerTeamData.dbo.PlayerToTeam WHERE player_id =" + id.ToString() +");"; 
-            command = new SqlCommand(query, connection);
+            query = "SELECT TeamName FROM PlayerTeamData.dbo.Teams WHERE Id = (SELECT team_id FROM PlayerTeamData.dbo.PlayerToTeam WHERE player_id =" + id.ToString() + ");";
+            command = new MySqlCommand(query, connection);
             reader = command.ExecuteReader();
             while (reader.Read())
             {
@@ -203,7 +205,7 @@ namespace WindowsFormsApp1
             reader.Close();
             //Get a list of Past Teams ids from the Database and add them to rows
             query = "SELECT team_id FROM PlayerTeamData.dbo.PlayerToPastTeams WHERE player_id =" + id.ToString();
-            command = new SqlCommand(query, connection);
+            command = new MySqlCommand(query, connection);
             reader = command.ExecuteReader();
             while (reader.Read())
             {
@@ -214,7 +216,7 @@ namespace WindowsFormsApp1
             foreach (int team_id in PastTeams)
             {
                 query = "SELECT TeamName FROM PlayerTeamData.dbo.Teams WHERE Id =" + team_id.ToString();
-                command = new SqlCommand(query, connection);
+                command = new MySqlCommand(query, connection);
                 reader = command.ExecuteReader();
                 while (reader.Read())
                 {
@@ -232,7 +234,7 @@ namespace WindowsFormsApp1
                         row["PastTeams"] = reader["TeamName"].ToString();
                         PlayerTeamInfo.Rows.Add(row);
                     }
-                    
+
                 }
                 reader.Close();
             }
@@ -246,11 +248,11 @@ namespace WindowsFormsApp1
         {
             //create list to store team names:
             List<string> TeamNames = new List<string>();
-            SqlConnection connection = new SqlConnection(this.connectString);
+            MySqlConnection connection = new MySqlConnection(this.connectStringRemote);
             connection.Open();
             string query = "Select TeamName FROM PlayerTeamData.dbo.Teams";
-            SqlCommand command = new SqlCommand(query, connection);
-            SqlDataReader reader = command.ExecuteReader();
+            MySqlCommand command = new MySqlCommand(query, connection);
+            MySqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
                 TeamNames.Add(reader["TeamName"].ToString());
