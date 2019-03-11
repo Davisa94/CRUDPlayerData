@@ -33,7 +33,7 @@ namespace WindowsFormsApp1
 
         public bool ValidateDecimalNumbers(string decimalToValidate)
         {
-            string decimalRules = @"^\d{ 2}.\d*$";
+            string decimalRules = @"^\d{2}.\d*$";
             if (Regex.IsMatch(decimalToValidate, decimalRules))
             {
                 return true;

@@ -231,7 +231,6 @@ namespace WindowsFormsApp1
             // 
             this.checkedListBox1.CheckOnClick = true;
             this.checkedListBox1.FormattingEnabled = true;
-            
             this.checkedListBox1.Location = new System.Drawing.Point(22, 298);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(353, 123);
