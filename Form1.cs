@@ -18,7 +18,7 @@ namespace WindowsFormsApp1
             InitializeComponent();
             //TODO Initialize Gridview1
             //TODO Initialize Gridview1
-            DBConnection dbo = new DBConnection();
+            RemoteDBConnection dbo = new RemoteDBConnection();
             dataGridView1.DataSource = dbo.GetPlayersInfo();
         }
 
@@ -155,7 +155,7 @@ namespace WindowsFormsApp1
 
                 
                 //create a DBConnection and insert the player Data
-                DBConnection dbo = new DBConnection();
+                RemoteDBConnection dbo = new RemoteDBConnection();
                 int lastInsertId = dbo.SavePlayer(player);
                 //TODO add player to teams past and present;
                 dbo.AddPlayerToTeams(player, lastInsertId);
@@ -195,7 +195,7 @@ namespace WindowsFormsApp1
             this.playerInfoTableAdapter.Fill(this.playerTeamDataDataSet.playerInfo);
             //TODO: LOAD PLAYER LIST BY DEFAULT;
             //create DB object
-            DBConnection dbo = new DBConnection();
+            RemoteDBConnection dbo = new RemoteDBConnection();
             //create the list
             List<string> CurrentTeamNames = new List<string>();
             List<string> PastTeamNames = new List<string>();
@@ -283,7 +283,7 @@ namespace WindowsFormsApp1
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int value = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
-            DBConnection dbo = new DBConnection();
+            RemoteDBConnection dbo = new RemoteDBConnection();
             
             DataTable PlayerTeamInfo = new DataTable();
 

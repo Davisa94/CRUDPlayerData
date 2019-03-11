@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="PlayerTeamDataDataSet3" targetNamespace="http://tempuri.org/PlayerTeamDataDataSet3.xsd" xmlns:mstns="http://tempuri.org/PlayerTeamDataDataSet3.xsd" xmlns="http://tempuri.org/PlayerTeamDataDataSet3.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="PlayerTeamDataConnectionString2" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="PlayerTeamDataConnectionString2 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.WindowsFormsApp1.Properties.Settings.GlobalReference.Default.PlayerTeamDataConnectionString2" Provider="MySql.Data.MySqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="playerInfoTableAdapter" GeneratorDataComponentClassName="playerInfoTableAdapter" Name="playerInfo" UserDataComponentName="playerInfoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="PlayerTeamDataConnectionString2 (Settings)" DbObjectName="PlayerTeamData.playerInfo" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `Id`, `FirstName`, `MiddleName`, `LastName`, `DateOfBirth`, `HeightInches`, `JerseyNumber` FROM `playerInfo`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PlayerToPastTeamsTableAdapter" GeneratorDataComponentClassName="PlayerToPastTeamsTableAdapter" Name="PlayerToPastTeams" UserDataComponentName="PlayerToPastTeamsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="PlayerTeamDataConnectionString2 (Settings)" DbObjectName="PlayerTeamData.PlayerToPastTeams" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `Id`, `Player_id`, `Team_id` FROM `PlayerToPastTeams`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PlayerToTeamTableAdapter" GeneratorDataComponentClassName="PlayerToTeamTableAdapter" Name="PlayerToTeam" UserDataComponentName="PlayerToTeamTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="PlayerTeamDataConnectionString2 (Settings)" DbObjectName="PlayerTeamData.PlayerToTeam" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `Id`, `player_id`, `team_id` FROM `PlayerToTeam`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TeamsTableAdapter" GeneratorDataComponentClassName="TeamsTableAdapter" Name="Teams" UserDataComponentName="TeamsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="PlayerTeamDataConnectionString2 (Settings)" DbObjectName="PlayerTeamData.Teams" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `Id`, `TeamLocation`, `TeamName` FROM `Teams`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="PlayerTeamDataDataSet3" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="PlayerTeamDataDataSet3" msprop:Generator_UserDSName="PlayerTeamDataDataSet3">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="playerInfo" msprop:Generator_TableClassName="playerInfoDataTable" msprop:Generator_TableVarName="tableplayerInfo" msprop:Generator_TablePropName="playerInfo" msprop:Generator_RowDeletingName="playerInfoRowDeleting" msprop:Generator_RowChangingName="playerInfoRowChanging" msprop:Generator_RowEvHandlerName="playerInfoRowChangeEventHandler" msprop:Generator_RowDeletedName="playerInfoRowDeleted" msprop:Generator_UserTableName="playerInfo" msprop:Generator_RowChangedName="playerInfoRowChanged" msprop:Generator_RowEvArgName="playerInfoRowChangeEvent" msprop:Generator_RowClassName="playerInfoRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="PlayerToPastTeams" msprop:Generator_TableClassName="PlayerToPastTeamsDataTable" msprop:Generator_TableVarName="tablePlayerToPastTeams" msprop:Generator_TablePropName="PlayerToPastTeams" msprop:Generator_RowDeletingName="PlayerToPastTeamsRowDeleting" msprop:Generator_RowChangingName="PlayerToPastTeamsRowChanging" msprop:Generator_RowEvHandlerName="PlayerToPastTeamsRowChangeEventHandler" msprop:Generator_RowDeletedName="PlayerToPastTeamsRowDeleted" msprop:Generator_UserTableName="PlayerToPastTeams" msprop:Generator_RowChangedName="PlayerToPastTeamsRowChanged" msprop:Generator_RowEvArgName="PlayerToPastTeamsRowChangeEvent" msprop:Generator_RowClassName="PlayerToPastTeamsRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="PlayerToTeam" msprop:Generator_TableClassName="PlayerToTeamDataTable" msprop:Generator_TableVarName="tablePlayerToTeam" msprop:Generator_TablePropName="PlayerToTeam" msprop:Generator_RowDeletingName="PlayerToTeamRowDeleting" msprop:Generator_RowChangingName="PlayerToTeamRowChanging" msprop:Generator_RowEvHandlerName="PlayerToTeamRowChangeEventHandler" msprop:Generator_RowDeletedName="PlayerToTeamRowDeleted" msprop:Generator_UserTableName="PlayerToTeam" msprop:Generator_RowChangedName="PlayerToTeamRowChanged" msprop:Generator_RowEvArgName="PlayerToTeamRowChangeEvent" msprop:Generator_RowClassName="PlayerToTeamRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Teams" msprop:Generator_TableClassName="TeamsDataTable" msprop:Generator_TableVarName="tableTeams" msprop:Generator_TablePropName="Teams" msprop:Generator_RowDeletingName="TeamsRowDeleting" msprop:Generator_RowChangingName="TeamsRowChanging" msprop:Generator_RowEvHandlerName="TeamsRowChangeEventHandler" msprop:Generator_RowDeletedName="TeamsRowDeleted" msprop:Generator_UserTableName="Teams" msprop:Generator_RowChangedName="TeamsRowChanged" msprop:Generator_RowEvArgName="TeamsRowChangeEvent" msprop:Generator_RowClassName="TeamsRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

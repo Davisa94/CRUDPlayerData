@@ -44,5 +44,16 @@ namespace WindowsFormsApp1.Properties {
                 return ((string)(this["PlayerTeamDataConnectionString1"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=skycraftia.duckdns.org;user id=remote;password=remoteCanGetIn@126;persists" +
+            "ecurityinfo=True;database=PlayerTeamData")]
+        public string PlayerTeamDataConnectionString2 {
+            get {
+                return ((string)(this["PlayerTeamDataConnectionString2"]));
+            }
+        }
     }
 }
