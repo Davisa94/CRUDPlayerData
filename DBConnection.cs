@@ -12,7 +12,7 @@ namespace WindowsFormsApp1
 
     class DBConnection
     {
-        private string connectStringRemote = @""
+        private string connectStringRemote = @"";
         private string connectStringOld = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=master;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
         private string connectString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\PlayerTeamData.mdf;Integrated Security=True";
         public int SavePlayer(Player player)
