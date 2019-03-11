@@ -36,27 +36,9 @@ namespace WindowsFormsApp1
         {
 
         }
-        private void ReloadTeamInfo()
-        {
-            RemoteDBConnection dbo = new RemoteDBConnection();
-            //create the list
-            List<string> CurrentTeamNames = new List<string>();
-            List<string> PastTeamNames = new List<string>();
-            try
-            {
-                CurrentTeamNames = dbo.GetTeams();
-                PastTeamNames = dbo.GetTeams();
-                this.currentTeamComboBox.DataSource = CurrentTeamNames;
-                this.checkedListBox1.DataSource = PastTeamNames;
-            }
-            catch
-            {
-                MessageBox.Show("Couldnt connect to database");
-            }
-        }
+
         private void submitButton_Click(object sender, EventArgs e)
         {
-            ReloadTeamInfo();
             Validation validator = new Validation();
             bool validInfo = false;
             bool validFirstName = false;
