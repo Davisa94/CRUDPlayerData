@@ -222,37 +222,6 @@ namespace WindowsFormsApp1
             // currentTeamComboBox
             // 
             this.currentTeamComboBox.FormattingEnabled = true;
-            this.currentTeamComboBox.Items.AddRange(new object[] {
-            "Boston Celtics",
-            "Brooklyn Nets",
-            "New York Knicks",
-            "Philadelphia 76ers",
-            "Toronto Raptors",
-            "Golden State Warriors",
-            "Los Angeles Clippers",
-            "Los Angeles Lakers",
-            "Phoenix Suns",
-            "Sacramento Kings",
-            "Chicago Bulls",
-            "Cleveland Cavaliers",
-            "Detroit Pistons",
-            "Indiana Pacers",
-            "Milwaukee Bucks",
-            "Dallas Mavericks",
-            "Houston Rockets",
-            "Memphis Grizzlies",
-            "New Orleans Hornets",
-            "San Antonio Spurs",
-            "Atlanta Hawks",
-            "Charlotte Bobcats",
-            "Miami Heat",
-            "Orlando Magic",
-            "Washington Wizards",
-            "Denver Nuggets",
-            "Minnesota Timberwolves",
-            "Oklahoma City Thunder",
-            "Portland Trail Blazers",
-            "Utah Jazz"});
             this.currentTeamComboBox.Location = new System.Drawing.Point(124, 204);
             this.currentTeamComboBox.Name = "currentTeamComboBox";
             this.currentTeamComboBox.Size = new System.Drawing.Size(251, 24);
@@ -262,37 +231,7 @@ namespace WindowsFormsApp1
             // 
             this.checkedListBox1.CheckOnClick = true;
             this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
-            "Boston Celtics",
-            "Brooklyn Nets",
-            "New York Knicks",
-            "Philadelphia 76ers",
-            "Toronto Raptors",
-            "Golden State Warriors",
-            "Los Angeles Clippers",
-            "Los Angeles Lakers",
-            "Phoenix Suns",
-            "Sacramento Kings",
-            "Chicago Bulls",
-            "Cleveland Cavaliers",
-            "Detroit Pistons",
-            "Indiana Pacers",
-            "Milwaukee Bucks",
-            "Dallas Mavericks",
-            "Houston Rockets",
-            "Memphis Grizzlies",
-            "New Orleans Hornets",
-            "San Antonio Spurs",
-            "Atlanta Hawks",
-            "Charlotte Bobcats",
-            "Miami Heat",
-            "Orlando Magic",
-            "Washington Wizards",
-            "Denver Nuggets",
-            "Minnesota Timberwolves",
-            "Oklahoma City Thunder",
-            "Portland Trail Blazers",
-            "Utah Jazz"});
+            
             this.checkedListBox1.Location = new System.Drawing.Point(22, 298);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(353, 123);

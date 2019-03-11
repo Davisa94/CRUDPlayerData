@@ -62,6 +62,7 @@ namespace WindowsFormsApp1
             string query = "Select Id FROM PlayerTeamData.Teams WHERE TeamName like '" + TeamName + "'";
             MySqlConnection connection = new MySqlConnection(this.connectStringRemote);
             MySqlCommand command = new MySqlCommand(query, connection);
+            command.CommandTimeout = 60;
             connection.Open();
             MySqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
@@ -96,6 +97,8 @@ namespace WindowsFormsApp1
                 //Prepare the query
                 using (MySqlCommand command = new MySqlCommand(query))
                 {
+                    command.CommandTimeout = 60;
+
                     command.Connection = connection;
                     //Set the command type
                     command.CommandType = System.Data.CommandType.Text;
@@ -123,6 +126,8 @@ namespace WindowsFormsApp1
                         //Prepare the query
                         using (MySqlCommand command = new MySqlCommand(query))
                         {
+                            command.CommandTimeout = 60;
+
                             command.Connection = connection;
                             //Set the command type
                             command.CommandType = System.Data.CommandType.Text;
@@ -152,6 +157,8 @@ namespace WindowsFormsApp1
             //Get player name
             string query = "Select * FROM PlayerTeamData.playerInfo";
             MySqlCommand command = new MySqlCommand(query, connection);
+            command.CommandTimeout = 60;
+
             MySqlDataAdapter dataAdapter = new MySqlDataAdapter(command);
             dataAdapter.Fill(dataTable);
             connection.Close();
@@ -184,6 +191,8 @@ namespace WindowsFormsApp1
             //Get player name
             string query = "Select FirstName, LastName FROM PlayerTeamData.playerInfo WHERE Id=" + id.ToString();
             MySqlCommand command = new MySqlCommand(query, connection);
+            command.CommandTimeout = 60;
+
             MySqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
@@ -196,6 +205,8 @@ namespace WindowsFormsApp1
             //Get the Current Team from the Database
             query = "SELECT TeamName FROM PlayerTeamData.Teams WHERE Id = (SELECT team_id FROM PlayerTeamData.PlayerToTeam WHERE player_id =" + id.ToString() + ");";
             command = new MySqlCommand(query, connection);
+            command.CommandTimeout = 60;
+
             reader = command.ExecuteReader();
             while (reader.Read())
             {
@@ -205,6 +216,8 @@ namespace WindowsFormsApp1
             //Get a list of Past Teams ids from the Database and add them to rows
             query = "SELECT team_id FROM PlayerTeamData.PlayerToPastTeams WHERE player_id =" + id.ToString();
             command = new MySqlCommand(query, connection);
+            command.CommandTimeout = 60;
+
             reader = command.ExecuteReader();
             while (reader.Read())
             {
@@ -216,6 +229,8 @@ namespace WindowsFormsApp1
             {
                 query = "SELECT TeamName FROM PlayerTeamData.Teams WHERE Id =" + team_id.ToString();
                 command = new MySqlCommand(query, connection);
+                command.CommandTimeout = 60;
+
                 reader = command.ExecuteReader();
                 while (reader.Read())
                 {
@@ -251,6 +266,8 @@ namespace WindowsFormsApp1
             connection.Open();
             string query = "Select TeamName FROM PlayerTeamData.Teams";
             MySqlCommand command = new MySqlCommand(query, connection);
+            command.CommandTimeout = 60;
+
             MySqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
