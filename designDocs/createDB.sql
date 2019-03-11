@@ -74,5 +74,51 @@ CREATE TABLE [dbo].[Teams] (
 );
 
 
+ -- ============================================
+ -- Mysql database 
+ -- ============================================
 
+ CREATE TABLE `PlayerTeamData`.`playerInfo` (
+  `Id` INT NOT NULL AUTO_INCREMENT,
+  `FirstName` VARCHAR(255) NOT NULL,
+  `MiddleName` VARCHAR(255) NOT NULL,
+  `LastName` VARCHAR(255) NOT NULL,
+  `DateOfBirth` DATE NOT NULL,
+  `HeightInches` TINYINT NOT NULL,
+  `JerseyNumber` TINYINT NOT NULL,
+  PRIMARY KEY (`Id`));
 
+CREATE TABLE `PlayerTeamData`.`Teams` (
+  `Id` INT NOT NULL AUTO_INCREMENT,
+  `TeamLocation` VARCHAR(255) NOT NULL,
+  `TeamName` VARCHAR(255) NOT NULL,
+  PRIMARY KEY (`Id`));
+
+CREATE TABLE `PlayerToTeam` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `player_id` int(11) NOT NULL,
+  `team_id` int(11) NOT NULL,
+  PRIMARY KEY (`Id`),
+  KEY `PTT_player_id_idx` (`player_id`),
+  KEY `PTT_team_id_idx` (`team_id`),
+  CONSTRAINT `PTT_player_id` FOREIGN KEY (`player_id`) REFERENCES `playerInfo` (`Id`),
+  CONSTRAINT `PTT_team_id` FOREIGN KEY (`team_id`) REFERENCES `Teams` (`Id`)
+);
+
+CREATE TABLE `PlayerTeamData`.`PlayerToPastTeams` (
+  `Id` INT NOT NULL AUTO_INCREMENT,
+  `Player_id` INT NOT NULL,
+  `Team_id` INT NOT NULL,
+  PRIMARY KEY (`Id`, `Player_id`),
+  INDEX `PTPT_player_id_idx` (`Player_id` ASC) VISIBLE,
+  INDEX `PTPT_team_id_idx` (`Team_id` ASC) VISIBLE,
+  CONSTRAINT `PTPT_player_id`
+    FOREIGN KEY (`Player_id`)
+    REFERENCES `PlayerTeamData`.`playerInfo` (`Id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `PTPT_team_id`
+    FOREIGN KEY (`Team_id`)
+    REFERENCES `PlayerTeamData`.`Teams` (`Id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
